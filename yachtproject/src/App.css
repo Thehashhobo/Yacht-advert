@@ -142,6 +142,31 @@ p {
   text-decoration: underline;
 }
 
+.responsive-container {
+  display: flex;
+  flex-direction: column; /* Default to 2 rows (vertical) */
+  background-color: black;
+  color: white; /* Text color to make content visible */
+  padding: 20px; /* Optional: Add some padding */
+  gap: 10px; /* Space between the boxes */
+}
+
+/* Each box styling */
+.box {
+  background-color: gray;
+  padding: 20px;
+  text-align: center;
+  border-radius: 20px;
+  
+}
+
+/* Media query for larger screens (e.g., desktops) */
+@media (min-width: 768px) {
+  .responsive-container {
+    flex-direction: row; /* Change to 1 row and 2 columns */
+  }
+}
+
 /* mobile Specific Tweaks (vertical device is default)*/ 
 @media (min-width: 420px) {
   
@@ -194,5 +219,8 @@ p {
   }
   .intouch {
     margin-right: 30px;
+  }
+  .box{
+    max-width: 65%;
   }
 }

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Card } from 'antd';
 import '../App.css'; // Import your CSS
+import m1 from '../assets/m1.webp';
 
 const { Meta } = Card;
 
@@ -27,7 +28,7 @@ function FlexCardGrid() {
             cover={
               <img
                 alt="example"
-                src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png"
+                src={m1}
               />
             }
           >
@@ -43,7 +44,7 @@ function FlexCardGrid() {
             cover={
               <img
                 alt="example"
-                src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png"
+                src={m1}
               />
             }
           >
@@ -59,7 +60,7 @@ function FlexCardGrid() {
             cover={
               <img
                 alt="example"
-                src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png"
+                src={m1}
               />
             }
           >
@@ -75,7 +76,7 @@ function FlexCardGrid() {
             cover={
               <img
                 alt="example"
-                src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png"
+                src={m1}
               />
             }
           >
