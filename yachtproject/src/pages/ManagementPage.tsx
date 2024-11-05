@@ -1,6 +1,7 @@
 import React from 'react';
 import m1 from '../assets/m1.webp';
 import m2 from '../assets/m2.webp';
+import m3 from '../assets/m3.webp';
 import { Collapse, Button } from 'antd';
 
 const ManagementPage: React.FC = () => {
@@ -76,6 +77,32 @@ return (
               },
             ]}
         />
+      </div>
+    </div>
+    <div
+      className="outer-div"
+      style={{
+        backgroundImage: `url(${m3})`,
+        height: '600px',
+      }}
+    >
+      <div
+        style={{
+          position: 'absolute',
+          top: '50%',
+          left: '50%',
+          transform: 'translate(-50%, -50%)',
+          color: 'white',
+          textAlign: 'center',
+          backgroundColor: 'rgba(0, 0, 0, 0.6)',
+          padding: '20px',
+          borderRadius: '20px',
+        }}
+      >
+        <h2 style={{ margin: '15px'}}>Set Sail with Confidence</h2>
+        <p style={{ margin: '5px', }}>Experience the ultimate in worry-free yachting with our all-inclusive yacht crewing service.
+           From seasoned captains to skilled deckhands and professional stewards, our experienced crew handles every detail to ensure your journey 
+           is seamless and unforgettable.</p>
       </div>
     </div>
     <div
