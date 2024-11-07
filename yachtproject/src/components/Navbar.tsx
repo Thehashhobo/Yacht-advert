@@ -15,6 +15,10 @@ const Navbar: React.FC = () => {
         return '2';
       case '/services':
         return '3';
+      case '/rentals':
+        return '4';
+      case '/trainings':
+        return '5';
       case '/':
       default:
         return '1';
@@ -27,8 +31,7 @@ const Navbar: React.FC = () => {
     { key: '2', label: <Link to="/management">Yacht Management</Link> },
     { key: '3', label: <Link to="/services">Services and Repair</Link> },
     { key: '4', label: <Link to="/rentals">Yacht Rentals</Link> },
-    { key: '5', label: <Link to="/training">Training</Link> },
-    { key: '6', label: <Link to="/contact">Contact</Link> },
+    { key: '5', label: <Link to="/trainings">Training</Link> },
   ];
 
   return (
@@ -39,7 +42,7 @@ const Navbar: React.FC = () => {
         position: 'sticky',
         top: 0,
         overflow: 'hidden',
-        zIndex: 3,
+        zIndex: 5 ,
       }}
     >
       <div className="demo-logo" />

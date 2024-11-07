@@ -160,6 +160,14 @@ p {
   
 }
 
+.outer-div-train {
+  background-size: cover;
+}  
+
+.training-container {
+  height: 95vh;
+}
+
 /* Media query for larger screens (e.g., desktops) */
 @media (min-width: 768px) {
   .responsive-container {
@@ -169,6 +177,7 @@ p {
 
 /* mobile Specific Tweaks (vertical device is default)*/ 
 @media (min-width: 420px) {
+     
   
 }
 
@@ -222,5 +231,27 @@ p {
   }
   .box{
     max-width: 65%;
+  }
+  .outer-div-r {
+    position: relative;
+    height: 70vh;
+    width:  100vw;
+    background-size: cover;
+  }
+  .r-hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-top: 5rem;
+  }
+  .services-container {
+    height: 30vh
+  }
+  .outer-div-train {
+    background-size: cover; 
+  }
+  .training-container {
+    height: 43vh;
   }
 }

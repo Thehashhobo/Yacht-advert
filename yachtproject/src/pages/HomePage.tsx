@@ -26,7 +26,7 @@ const HomePage: React.FC = () => {
             color: 'white',
             textAlign: 'center',
             whiteSpace: 'nowrap',
-            backgroundColor: 'rgba(0, 0, 0, 0.07)',
+            backgroundColor: 'rgba(0, 0, 0, 0.09)',
             padding: '20px',
             borderRadius: '80px',
           }}

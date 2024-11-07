@@ -4,6 +4,8 @@ import Navbar from './components/Navbar';
 import HomePage from './pages/HomePage';
 import ManagementPage from './pages/ManagementPage';
 import ServicesPage from './pages/ServicesPage';
+import RentalsPage from './pages/RentalsPage';
+import TrainingsPage from './pages/TrainingsPage';
 // import RentalsPage from './pages/RentalsPage';
 import {Layout} from 'antd';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
@@ -23,6 +25,8 @@ const App: React.FC = () => {
           <Route path="/" element={<HomePage />} />
           <Route path="/management" element={<ManagementPage />} />
           <Route path="/services" element={<ServicesPage />} />
+          <Route path="/rentals" element={<RentalsPage />} />
+          <Route path="/trainings" element={<TrainingsPage />} />
           {/* <Route path="/services" element={<RentalsPage />} /> */}
         </Routes>
         <div className="footer-section">
