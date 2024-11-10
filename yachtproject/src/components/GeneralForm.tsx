@@ -22,7 +22,7 @@ const GeneralForm: React.FC = () => {
         <Form.Item label="Service Type" className="form-label">
           <Select>
             <Select.Option value="Management">Management</Select.Option>
-            <Select.Option value="Service">Servicing</Select.Option>
+            <Select.Option value="Service">Services</Select.Option>
             <Select.Option value="Repairs">Repairs</Select.Option>
             <Select.Option value="Rentals">Rentals</Select.Option>
             <Select.Option value="Train">Training</Select.Option>
