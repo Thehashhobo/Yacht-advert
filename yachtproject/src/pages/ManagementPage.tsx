@@ -2,6 +2,7 @@ import React from 'react';
 import m1 from '../assets/m1.webp';
 import m2 from '../assets/m2.webp';
 import m3 from '../assets/m3.webp';
+import ContactModal from '../components/ContactModal';
 import { Collapse, Button } from 'antd';
 
 const ManagementPage: React.FC = () => {
@@ -136,6 +137,7 @@ return (
         <Button type="primary" size="large">
           Contact Us Now
         </Button>
+        <ContactModal></ContactModal>
       </div>
     </div>
   </div>

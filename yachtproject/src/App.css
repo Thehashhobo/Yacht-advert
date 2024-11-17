@@ -168,6 +168,11 @@ p {
   height: 95vh;
 }
 
+.form-label .ant-form-item-label > label {
+  color: #000 !important;
+}
+
+
 /* Media query for larger screens (e.g., desktops) */
 @media (min-width: 768px) {
   .responsive-container {
