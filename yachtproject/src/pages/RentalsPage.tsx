@@ -1,27 +1,30 @@
 
-// src/pages/Home.tsx
 import React from 'react';
 import '../App.css';
 import RentalCard from '../components/RentalCards';
-import r1 from '../assets/r1.webp';
+import r1 from '../assets/H2.webp';
 import background1 from '../assets/b1.webp';
 
 
+
 const RentalPage: React.FC = () => {
+  
   return (
     <>
     <div
         className="outer-div-r"
         style={{
-            backgroundImage: `linear-gradient(to bottom, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.2)), url(${r1})`,
-            backgroundPosition: 'center',
+            backgroundImage: `linear-gradient(to bottom, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.4)), url(${r1})`,
+            backgroundPosition: 'bottom',
+            backgroundSize: 'cover',
+            height: '65vh',
         }}
     >
 
-        <div className="r-hero" style={{padding: '2rem'}}>
-        <h1 style={{ color: 'white'}}>Yacht Charters Vancouver</h1>
-        <h3 style={{ color: 'white'}}>Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-          sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation</h3>
+        <div className="r-hero" style={{padding: '2rem', paddingTop: '1rem'}}>
+        <h1 style={{ color: 'white', marginBottom:'0.5rem', fontFamily: '"Poppins", serif'}}>Vancouver Yacht Charters </h1>
+        <h3 style={{ color: 'white'}}>We offer charter experiences for any occasion, from family outings to celebrations.
+        Explore our packages below or contact us for more details.</h3>
         </div>
 
     </div>
@@ -42,7 +45,7 @@ const RentalPage: React.FC = () => {
             left: 0,
             right: 0,
             bottom: 0,
-            zIndex: 1,
+            zIndex: 0,
             backgroundSize: 'cover',
             backgroundPosition: 'center',
           }}
@@ -54,22 +57,21 @@ const RentalPage: React.FC = () => {
             position: 'relative',
             zIndex: 2,
             display: 'flex',
-            flexDirection: 'column',
             alignItems: 'left',
             justifyContent: 'center',
-            height: '100%',
+
             color: 'white',
-            paddingLeft: '2.3rem',
+            padding: '0.8rem',
             paddingTop: '1.3rem',
           }}
         >
-                          <h1 style={{color: 'white', justifySelf: 'center'}}>Choose an Package</h1>
-        <p style={{color: 'white', marginTop:'1rem',marginBottom:'1.5rem' ,justifySelf: 'center'}}>We offer a variety of charter experiences suitable for any occasion, whether it’s a family and friends outing or 
-            a birthday or bachelor/bachelorette celebration. Choose from one of our packages listed below or Contact us directly 
-            for more information on our yachting packages and services.
+        <h1 style={{color: 'white', justifySelf: 'center', fontFamily: '"Poppins", serif'}}>Choose a Package</h1>
+        <p style={{color: 'white', marginTop:'1rem',marginBottom:'1.5rem' ,justifySelf: 'center'}}>
+
         </p>
-          <RentalCard/>
+          
         </div>
+        <RentalCard/>
       </div>
     </>
   );

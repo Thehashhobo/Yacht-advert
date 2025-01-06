@@ -5,10 +5,9 @@ import HomePage from './pages/HomePage';
 import ManagementPage from './pages/ManagementPage';
 import ServicesPage from './pages/ServicesPage';
 import RentalsPage from './pages/RentalsPage';
-import TrainingsPage from './pages/TrainingsPage';
 // import RentalsPage from './pages/RentalsPage';
 import {Layout} from 'antd';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import { FacebookFilled, TwitterCircleFilled, InstagramFilled, YoutubeFilled } from '@ant-design/icons';
 
 const { Footer } = Layout;
@@ -26,20 +25,17 @@ const App: React.FC = () => {
           <Route path="/management" element={<ManagementPage />} />
           <Route path="/services" element={<ServicesPage />} />
           <Route path="/rentals" element={<RentalsPage />} />
-          <Route path="/trainings" element={<TrainingsPage />} />
-          {/* <Route path="/services" element={<RentalsPage />} /> */}
+          {/* <Route path="/trainings" element={<TrainingsPage />} /> */}
         </Routes>
         <div className="footer-section">
         <div className="footer-links">
           <h3>Links</h3>
-          <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Management</a></li>
-            <li><a href="#">Service and Repair</a></li>
-            <li><a href="#">Rentals</a></li>
-            <li><a href="#">Training</a></li>
-            <li><a href="#">Contact</a></li>
-          </ul>
+            <ul>
+              <li><Link to="/">Home</Link></li>
+              <li><Link to="/management">Management</Link></li>
+              <li><Link to="/services">Service and Repair</Link></li>
+              <li><Link to="/rentals">Rentals</Link></li>
+            </ul>
         </div>
 
         <div className="footer-social">
@@ -54,10 +50,10 @@ const App: React.FC = () => {
 
         <div className="footer-info">
           <h3>General Inquiries</h3>
-          <p><strong>Location:</strong> Vancouver, British Columbia, Canada, address</p>
+          <p><strong>Location:</strong> Vancouver, British Columbia, Canada</p>
           <p><strong>Hours:</strong> Mon - Fri: 9 AM - 6 PM</p>
-          <p><strong>Phone:</strong> 090-080-0760</p>
-          <p><strong>Email:</strong> <a href="mailto:hello@company.com">hello@company.com</a></p>
+          <p><strong>Phone:</strong> +1 778-989-8588</p>
+          <p><strong>Email:</strong> <a href="mailto:oceanwave.vip@gmail.com">Ocean Wave Enterprises Ltd</a></p>
         </div>
       </div>
         <Footer style={{ textAlign: 'center' }}>
