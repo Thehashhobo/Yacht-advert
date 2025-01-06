@@ -3,9 +3,10 @@ import React from 'react';
 import '../App.css';
 import FlexCardGrid from '../components/FlexCardGrid';
 import GeneralForm from '../components/GeneralForm';
-import big_img from '../assets/home2.webp';
+import big_img from '../assets/H1.webp';
 import background1 from '../assets/b1.webp';
 import background2 from '../assets/b3.webp';
+
 
 
 const HomePage: React.FC = () => {
@@ -14,8 +15,9 @@ const HomePage: React.FC = () => {
       <div
         className="outer-div"
         style={{
-          backgroundImage: `url(${big_img})`,
-        }}
+          backgroundImage: `linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.2)), url(${big_img})`,
+          backgroundPosition: 'center',
+      }}
       >
         <div
           style={{
@@ -25,21 +27,27 @@ const HomePage: React.FC = () => {
             transform: 'translate(-50%, -50%)',
             color: 'white',
             textAlign: 'center',
-            whiteSpace: 'nowrap',
-            backgroundColor: 'rgba(0, 0, 0, 0.09)',
-            padding: '20px',
-            borderRadius: '80px',
+            whiteSpace: 'normal',
+            minWidth: '70vw',
+
           }}
-        >
-          <h1 style={{ marginBottom: '15px' }}>Company Name</h1>
-          <h3>YACHT MANAGEMENT, SERVICES</h3>
-          <h3>REPAIR AND RENTAL</h3>
-          <p style={{ marginTop: '5px' }}>Additional text can go here</p>
+        >  
+          <h1 style={{ marginBottom: '5px', fontFamily: '"Poppins", serif', }}>Ocean Wave</h1>
+          <h3
+            style={{
+             fontFamily: '"Poppins", serif',
+              color: 'white',
+            }}
+          >
+            YACHT MANAGEMENT, SERVICES, REPAIR AND RENTAL CENTRE
+          </h3>
+
+          <p style={{ marginTop: '5px', fontSize: '1.3rem', fontFamily: '"Poppins", serif',}}>In The Greater Vancouver Area</p>
         </div>
       </div>
 
       <div
-        className="outer-div"
+        className="outer-div-"
         style={{
           position: 'relative',
           backgroundColor: 'black',
@@ -71,12 +79,13 @@ const HomePage: React.FC = () => {
             justifyContent: 'center',
             height: '100%',
             color: 'white',
-            paddingLeft: '2.3rem',
+
             paddingTop: '1.3rem',
           }}
         >
-          <div className="intro-text">
-            <h4 style={{ marginBottom: '1.4rem', opacity: 0.75 }}>Company Name</h4>
+          <div style={{marginLeft:'1.5rem' }} className="intro-text">
+            
+            <h4 style={{marginBottom: '1.4rem', opacity: 0.75 }}>Ocean Wave</h4>
             <h3>VANCOUVER YACHT MANAGEMENT, SERVICES, REPAIRS AND RENTAL CENTRE</h3>
             <p style={{ marginTop: '0.7rem', paddingBottom: '2rem', opacity: 0.75 }}>
               Trusted and established Yacht service provider
