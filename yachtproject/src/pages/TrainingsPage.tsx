@@ -2,8 +2,7 @@ import React from 'react';
 import t1 from '../assets/t1.webp';
 import s2 from '../assets/s2.webp';
 import t2 from '../assets/t2.webp';
-import m2 from '../assets/m2.webp';
-import { Collapse, Button } from 'antd';
+import { Button } from 'antd';
 
 const TrainingsPage: React.FC = () => {
   return (
