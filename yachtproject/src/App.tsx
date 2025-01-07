@@ -5,6 +5,7 @@ import HomePage from './pages/HomePage';
 import ManagementPage from './pages/ManagementPage';
 import ServicesPage from './pages/ServicesPage';
 import RentalsPage from './pages/RentalsPage';
+import ScrollToTop from './components/ScrollToTop';
 // import RentalsPage from './pages/RentalsPage';
 import {Layout} from 'antd';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
@@ -18,8 +19,9 @@ const App: React.FC = () => {
 
   return (
     <Router>
-      <Layout>
-        <Navbar></Navbar>
+      <ScrollToTop />
+      <Navbar />
+
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/management" element={<ManagementPage />} />
@@ -53,13 +55,12 @@ const App: React.FC = () => {
           <p><strong>Location:</strong> Vancouver, British Columbia, Canada</p>
           <p><strong>Hours:</strong> Mon - Fri: 9 AM - 6 PM</p>
           <p><strong>Phone:</strong> +1 778-989-8588</p>
-          <p><strong>Email:</strong> <a href="mailto:oceanwave.vip@gmail.com">Ocean Wave Enterprises Ltd</a></p>
+          <p><strong>Email:</strong> <a href="mailto:oceanwave.vip@gmail.com" style={{ color: '#ffcc00' }}>Ocean Wave Enterprises Ltd</a></p>
         </div>
       </div>
         <Footer style={{ textAlign: 'center' }}>
           Designed by JerryW ©{new Date().getFullYear()} Powered by Ant Design
         </Footer>
-      </Layout>
     </Router>
   );
 };
