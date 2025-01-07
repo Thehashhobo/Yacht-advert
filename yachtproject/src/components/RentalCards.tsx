@@ -40,7 +40,7 @@ function RentalCards() {
       title: 'Meridian 441',
       description: '48 ft: 15 guests',
       images: [m1, m2, m3, m4, m5, m6],
-      features: ['2 bedrooms, 1 bathroom', 'Captain Included'],
+      features: ['2 bedrooms, 2 bathroom', 'Captain Included'],
       pricePerDay: '$500 per hour',
     },
   ];
