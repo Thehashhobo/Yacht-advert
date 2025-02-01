@@ -323,6 +323,13 @@ p {
   color: #000 ;
 }
 
+.outer-div-m2 {
+  position: relative;
+  min-width: 50vw;
+  background-size: cover;
+  background-position: center;
+}
+
 
 /* Media query for larger screens (e.g., desktops) */
 @media (min-width: 768px) {
@@ -351,16 +358,23 @@ p {
     background-position: center;
   }
 
+  .outer-div-m2 {
+    position: relative;
+    min-width: 50vw;
+    background-size: cover;
+    background-position: center;
+  }
+
   .outer-div-h{
     max-height: 70vh;
   }
 
   .intro-container {
-    max-height: 70vh;
+    min-height: 60vh;
   }
 
   .intro-container-r {
-    max-height: 70vh;
+    max-height: 60vh;
   }
 
   .intro-text{
@@ -383,7 +397,7 @@ p {
     flex: none; /* Cards take full width in vertical layout */
     width: 100%;
     min-width: 30vw;
-    min-height: 50vh;
+    /* min-height: 40vh; */
   }
 
   .flex-container-r {
@@ -391,7 +405,6 @@ p {
     flex-direction: row;
     justify-content: center;
     gap: 30px;
-    margin: 20px;
     
   }
   
@@ -446,4 +459,21 @@ p {
   .training-container {
     height: 43vh;
   }
+}
+
+@media (min-width: 2000px) {
+  .intro-container-r {
+    max-height: 40vh;
+  }
+
+  .outer-div-r {
+    height: 40vh !important;   
+
+  }
+
+  .outer-div-m2 {
+    max-height: 50vh !important;
+    position: relative;
+  }
+
 }

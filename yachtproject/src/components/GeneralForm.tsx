@@ -93,7 +93,6 @@ const GeneralForm: React.FC = () => {
         {/* Center the button using a Form.Item with centered styling */}
         <Form.Item
           className="submit-button"
-          wrapperCol={{ span: 24 }}
           style={{ textAlign: 'center' }}
         >
           <Button type="primary" htmlType="submit">

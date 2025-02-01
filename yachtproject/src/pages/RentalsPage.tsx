@@ -52,26 +52,24 @@ const RentalPage: React.FC = () => {
         ></div>
         
         <div
-          className="intro-container"
+          className="intro-container-r"
           style={{
             position: 'relative',
             zIndex: 2,
-            display: 'flex',
             alignItems: 'left',
             justifyContent: 'center',
 
             color: 'white',
             padding: '0.8rem',
-            paddingTop: '1.3rem',
           }}
         >
         <h1 style={{color: 'white', justifySelf: 'center', fontFamily: '"Poppins", serif'}}>Choose a Package</h1>
-        <p style={{color: 'white', marginTop:'1rem',marginBottom:'1.5rem' ,justifySelf: 'center'}}>
+        <p style={{color: 'white', marginTop:'0.3rem',marginBottom:'-2rem' ,justifySelf: 'center'}}>
 
         </p>
-          
+        <RentalCard/> 
         </div>
-        <RentalCard/>
+       
       </div>
     </>
   );
