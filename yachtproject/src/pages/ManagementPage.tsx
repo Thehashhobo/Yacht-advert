@@ -98,7 +98,7 @@ return (
       </div>
     </div>
     <div
-      className="outer-div"
+      className="outer-div-m2"
       style={{
         backgroundImage: `url(${m3})`,
         height: '600px',
