@@ -1,0 +1,46 @@
+/* Rental Page Specific Styles */
+
+/* Hero Section */
+.outerDivR {
+    position: relative;
+    background-size: cover;
+    background-position: bottom;
+    height: 65vh;
+}
+
+/* Hero Content */
+.rHero {
+    padding: 2rem;
+    padding-top: 1rem;
+    text-align: center;
+    color: white;
+}
+
+/* Background Section */
+.backgroundLayer {
+    filter: brightness(20%);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 0;
+    background-size: cover;
+    background-position: center;
+}
+
+/* Intro Section */
+.introContainerR {
+    position: relative;
+    z-index: 2;
+    color: white;
+    padding: 0.8rem;
+    text-align: center;
+}
+
+/* Media Queries */
+@media (min-width: 1024px) {
+    .introContainerR {
+        padding: 1.5rem;
+    }
+}

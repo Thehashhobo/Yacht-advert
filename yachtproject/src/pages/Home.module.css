@@ -1,0 +1,99 @@
+/* Home Page Specific Styles */
+
+/* Hero Section */
+.outerDivHero {
+    position: relative;
+    min-height: 50vh;
+    min-width: 50vw;
+    background-size: cover;
+    background-position: center;
+}
+
+/* Hero Content */
+.heroContent {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-align: center;
+    white-space: normal;
+    min-width: 70vw;
+}
+
+/* Intro Section */
+.outerDiv {
+    position: relative;
+    background-color: black;
+}
+
+.backgroundLayer {
+    filter: brightness(20%);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+    background-size: cover;
+    background-position: center;
+}
+
+.introContainer {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content: center;
+    height: 100%;
+    color: white;
+    padding-top: 1.3rem;
+    padding-bottom: 1.3rem;
+}
+
+.introText {
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+
+.introText h4 {
+    margin-bottom: 1.4rem;
+    opacity: 0.75;
+}
+
+.introText p {
+    margin-top: 0.7rem;
+    padding-bottom: 2rem;
+    opacity: 0.75;
+}
+
+/* Form Section */
+.formContainer {
+    background-size: cover;
+    background-position: center;
+    padding: 2rem;
+    position: relative;
+}
+
+.formContent {
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 2rem;
+    border-radius: 10px;
+}
+
+.intouch {
+    justify-self: center;
+    color: white;
+}
+
+/* Media Queries */
+@media (min-width: 1024px) {
+    .outerDivHero {
+        min-height: 95vh;
+    }
+
+    .introText {
+        margin-left: 5rem;
+    }
+}

@@ -1,0 +1,80 @@
+/* Services Page Specific Styles */
+
+/* Hero Section */
+.outerDivR {
+    position: relative;
+    height: 65vh;
+    background-size: cover;
+    background-position: center;
+}
+
+/* Hero Content */
+.rHero {
+    padding: 1.5rem;
+    text-align: center;
+    color: white;
+}
+
+/* Services Container */
+.servicesContainer {
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    height: 55vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Services Overlay */
+.servicesOverlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 1;
+}
+
+/* Services Content */
+.servicesContent {
+    z-index: 3;
+    text-align: center;
+    color: white;
+}
+
+/* Collapse Container */
+.collapseContainer {
+    margin: 1rem;
+}
+
+/* CTA Section */
+.ctaContainer {
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    height: 40vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* CTA Overlay */
+.ctaOverlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+/* CTA Content */
+.ctaContent {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    color: white;
+}

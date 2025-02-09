@@ -1,0 +1,101 @@
+/* Management Page Specific Styles */
+
+/* Hero Sections */
+.outerDivM {
+    position: relative;
+    min-height: 50vh;
+    background-size: cover;
+    background-position: center;
+}
+
+.outerDivM2 {
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    height: 600px;
+}
+
+/* Hero Content */
+.heroContent {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 20px;
+    border-radius: 80px;
+    min-width: 70vw;
+}
+
+/* Responsive Container */
+.responsiveContainer {
+    display: flex;
+    flex-direction: column;
+    background-color: black;
+    color: white;
+    padding: 20px;
+    gap: 10px;
+}
+
+/* Service Boxes */
+.box {
+    background-color: gray;
+    padding: 20px;
+    text-align: center;
+    border-radius: 20px;
+}
+
+/* Collapse Panels */
+.collapseContainer {
+    margin-bottom: 1rem;
+}
+
+/* CTA Section */
+.ctaContainer {
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    height: 40vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* CTA Overlay */
+.ctaOverlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+/* CTA Content */
+.ctaContent {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+}
+
+.contact{
+    color: white;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    margin-bottom: 1rem;
+}
+
+/* Media Queries */
+@media (min-width: 1024px) {
+    .responsiveContainer {
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+    .box {
+        max-width: 50%;
+    }
+}
