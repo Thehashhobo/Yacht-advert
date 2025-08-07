@@ -14,7 +14,7 @@ const HomePage: React.FC = () => {
       <div
         className={styles.outerDivHero}
         style={{
-          backgroundImage: `linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.2)), url(${big_img})`,
+          backgroundImage: `linear-gradient(to bottom, rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.25)), url(${big_img})`,
         }}
       >
         <div className={styles.heroContent}>
@@ -33,8 +33,8 @@ const HomePage: React.FC = () => {
         <div className={styles.introContainer}>
           <div className={styles.introText}>
             <h4>Ocean Wave</h4>
-            <h3>VANCOUVER YACHT MANAGEMENT, SERVICES, REPAIRS AND RENTAL CENTRE</h3>
-            <p>Trusted and established Yacht service provider</p>
+            <h3>YACHT MANAGEMENT, SERVICES, REPAIRS AND RENTAL CENTRE</h3>
+            <p>Trusted and established Yacht services provider</p>
           </div>
           <FlexCardGrid />
         </div>

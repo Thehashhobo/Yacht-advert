@@ -11,9 +11,24 @@ function FlexCardGrid() {
   const navigate = useNavigate();
 
   const cardData = [
-    { title: 'Yacht Management', description: '', path: '/management', image: c1 },
-    { title: 'Services and Repairs', description: '', path: '/services', image: c2 },
-    { title: 'Rentals', description: '', path: '/rentals', image: c4 },
+    { 
+      title: 'Yacht Management', 
+      description: 'Professional yacht management with comprehensive maintenance and care for your vessel.', 
+      path: '/management', 
+      image: c1 
+    },
+    { 
+      title: 'Services and Repairs', 
+      description: 'Expert repair services and maintenance to keep your yacht in pristine condition.', 
+      path: '/services', 
+      image: c2 
+    },
+    { 
+      title: 'Yacht Rentals', 
+      description: 'Luxury yacht rentals for unforgettable experiences on the water.', 
+      path: '/rentals', 
+      image: c4 
+    },
   ];
 
   return (
@@ -24,26 +39,20 @@ function FlexCardGrid() {
             className={styles.customHoverCard}
             hoverable
             cover={
-              <div
-                style={{
-                  height: '200px', 
-                  overflow: 'hidden',
-                }}
-              >
+              <div className={styles.cardCover}>
                 <img
                   alt={card.title}
                   src={card.image}
-                  style={{
-                    width: '100%',
-                    height: '100%',
-                    objectFit: 'cover', // Ensures the entire background image is displayed
-                  }}
+                  className={styles.cardImage}
                 />
               </div>
             }
             onClick={() => navigate(card.path)}
           >
-            <Meta title={card.title} description={card.description} />
+            <Meta 
+              title={<span className={styles.cardTitle}>{card.title}</span>} 
+              description={<span className={styles.cardDescription}>{card.description}</span>} 
+            />
           </Card>
         </div>
       ))}

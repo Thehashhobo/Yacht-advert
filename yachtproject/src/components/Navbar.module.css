@@ -1,0 +1,193 @@
+/* Custom Navbar Styles */
+.navbar {
+  display: flex;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  padding: 0 25px;
+  height: 100px;
+  background-color: #ede4df;
+}
+
+/* Desktop Layout */
+.leftNav,
+.rightNav {
+  display: flex;
+  flex: 1;
+  gap: 2rem;
+  align-items: center;
+  padding: 0.5rem 0;
+}
+
+.leftNav {
+  justify-content: flex-start;
+}
+
+.rightNav {
+  justify-content: flex-end;
+}
+
+.navLink {
+  color: var(--nav-text);
+  text-decoration: none;
+  font-size: 1.3rem;
+  font-weight: 500;
+  font-family: "Poppins", sans-serif;
+  padding: 0.5rem 1rem;
+  position: relative;
+  transition: all 0.3s ease;
+  display: block;
+  line-height: 1.5;
+  transform-origin: center;
+}
+
+.navLink::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background-color: var(--nav-underline);
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
+}
+
+.navLink:hover {
+  color: var(--nav-text-hover);
+  transform: scale(1.05);
+}
+
+.navLink:hover::after {
+  width: 60%;
+  background-color: var(--nav-underline-hover);
+}
+
+.navLink.active {
+  color: var(--nav-text-active);
+}
+
+.navLink.active::after {
+  width: 60%;
+  background-color: var(--nav-underline);
+}
+
+.navLink.active:hover {
+  color: var(--nav-text-active);
+  transform: scale(1.05);
+}
+
+.navLink.active:hover::after {
+  background-color: var(--nav-underline);
+}
+
+/* Logo Styles */
+.logoContainer {
+  display: flex;
+  align-items: center;
+  margin: 0 20px;
+}
+
+.logo {
+  height: 80px;
+}
+
+.logoMobile {
+  height: 70px;
+}
+
+/* Mobile Styles */
+.mobileHeader {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.mobileMenuButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  width: 40px;
+  height: 40px;
+  justify-content: center;
+  align-items: center;
+}
+
+.hamburger {
+  width: 25px;
+  height: 3px;
+  background-color: #333;
+  transition: 0.3s;
+  border-radius: 2px;
+}
+
+.mobileMenuButton:hover .hamburger {
+  background-color: var(--nav-text-hover);
+}
+
+.mobileMenuDropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background-color: #ede4df;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.mobileNav {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem 0;
+}
+
+.mobileNavLink {
+  color: var(--nav-text);
+  text-decoration: none;
+  font-size: 1.2rem;
+  font-weight: 500;
+  font-family: "Poppins", sans-serif;
+  padding: 1rem 25px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+  display: block;
+}
+
+.mobileNavLink:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+  color: var(--nav-text-hover);
+}
+
+.mobileNavLink.active {
+  color: var(--nav-text-active);
+  background-color: rgba(80, 164, 203, 0.1);
+  border-left: 4px solid var(--nav-underline);
+}
+
+.mobileNavLink.active:hover {
+  color: var(--nav-text-active);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .navbar {
+    height: 80px;
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .mobileHeader {
+    height: 80px;
+    padding: 0;
+  }
+  
+  .logoContainer {
+    margin: 0;
+  }
+}
