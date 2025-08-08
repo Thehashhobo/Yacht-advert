@@ -8,6 +8,7 @@
   padding: 0 25px;
   height: 100px;
   background-color: #ede4df;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 /* Desktop Layout */

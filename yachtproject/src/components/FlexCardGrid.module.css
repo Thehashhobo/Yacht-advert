@@ -2,11 +2,11 @@
     display: flex;
     flex-wrap: wrap;
     width: 85%;
-    max-width: 1200px;
+    max-width: 1300px;
     justify-content: space-between;
     margin: 40px auto;
     gap: 20px;
-    padding: 0 20px;
+    padding: 0 10px;
 }
 
 .flexItem { 
@@ -29,8 +29,8 @@
 
 .customHoverCard:hover {
     transform: translateY(-12px) scale(1.03);
-    box-shadow: 0 20px 40px rgba(80, 164, 203, 0.3);
-    border-color: #50a4cbff;
+    box-shadow: 0 20px 40px var(--secondary-color);
+    border-color: var(--text-primary);
     border-width: 2px;
 }
 
@@ -55,7 +55,7 @@
 .cardTitle {
     font-size: 1.4rem;
     font-weight: 600;
-    color: #2c3e50;
+    color: var(--text-primary);
     margin-bottom: 8px;
 }
 
@@ -87,8 +87,9 @@
 /* Desktop styles */
 @media (min-width: 1024px) {
     .flexContainer {
-        justify-content: space-between;
-        gap: 20px;
+        justify-content: space-evenly;
+        width: 95%;
+        gap: 40px;
     }
     
     .flexItem { 
