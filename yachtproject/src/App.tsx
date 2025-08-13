@@ -5,6 +5,9 @@ import HomePage from './pages/HomePage';
 import ManagementPage from './pages/ManagementPage';
 import ServicesPage from './pages/ServicesPage';
 import RentalsPage from './pages/RentalsPage';
+import Meridian from './pages/yachts/MerPage';
+import YallaHabibi from './pages/yachts/YHPage';
+
 import ScrollToTop from './components/ScrollToTop';
 // import RentalsPage from './pages/RentalsPage';
 import {Layout} from 'antd';
@@ -27,7 +30,10 @@ const App: React.FC = () => {
           <Route path="/management" element={<ManagementPage />} />
           <Route path="/services" element={<ServicesPage />} />
           <Route path="/rentals" element={<RentalsPage />} />
-          {/* <Route path="/trainings" element={<TrainingsPage />} /> */}
+          
+          {/* Individual yacht pages */}
+          <Route path="/yacht/Meridian" element={<Meridian />} />
+          <Route path="/yacht/YallaHabibi" element={<YallaHabibi />} />
         </Routes>
         <div className="footer-section">
         <div className="footer-links">

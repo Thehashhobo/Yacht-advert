@@ -1,0 +1,333 @@
+/* Shared Yacht Page Styles */
+
+.yachtPage {
+  max-width: 85vw;
+  margin: 0 auto;
+  padding: 2rem 0rem;
+  background: white;
+  font-family: "Poppins", sans-serif;
+}
+
+/* Hero Section */
+.heroSection {
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  padding: 3rem 2rem;
+  border-radius: 20px;
+  margin-bottom: 3rem;
+  border: 1px solid #e9ecef;
+}
+
+.partyHero {
+  background: linear-gradient(135deg, #fff3cd 0%, #ffeaa7 100%);
+}
+
+.familyHero {
+  background: linear-gradient(135deg, #d1ecf1 0%, #bee5eb 100%);
+}
+
+.heroContent {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.backButton {
+  background: var(--secondary-color);
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 1rem;
+  margin-bottom: 2rem;
+  transition: all 0.3s ease;
+  font-weight: 600;
+}
+
+.backButton:hover {
+  background: var(--secondary-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(80, 164, 203, 0.3);
+}
+
+.yachtTitle {
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: var(--text-primary, #2c3e50);
+  margin: 0 0 1rem 0;
+}
+
+.yachtSubtitle {
+  font-size: 1.3rem;
+  color: var(--text-secondary, #7f8c8d);
+  margin-bottom: 2rem;
+  font-weight: 500;
+}
+
+.quickInfo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.priceDisplay {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--primary-color, #50a4cbff);
+  background: white;
+  padding: 1rem 2rem;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.locationDisplay {
+  font-size: 1.2rem;
+  color: var(--text-secondary, #7f8c8d);
+  font-weight: 600;
+}
+
+/* Custom Feature Sections */
+.luxuryFeatures,
+.partyFeatures,
+.familyFeatures {
+  margin: 3rem 0;
+  padding: 2rem;
+  background: #f8f9fa;
+  border-radius: 16px;
+  border: 1px solid #e9ecef;
+}
+
+.luxuryFeatures h2,
+.partyFeatures h2,
+.familyFeatures h2 {
+  text-align: center;
+  color: var(--text-primary, #2c3e50);
+  margin-bottom: 2rem;
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.highlightGrid,
+.partyGrid,
+.familyGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.highlightCard,
+.partyCard,
+.familyCard {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  border: 1px solid #e9ecef;
+}
+
+.highlightCard:hover,
+.partyCard:hover,
+.familyCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.highlightIcon,
+.partyIcon,
+.familyIcon {
+  font-size: 3rem;
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.highlightCard h3,
+.partyCard h3,
+.familyCard h3 {
+  color: var(--text-primary, #2c3e50);
+  margin-bottom: 1rem;
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+
+.highlightCard p,
+.partyCard p,
+.familyCard p {
+  font-size: 1rem;
+  color: #666;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.partyCard:hover p{
+  color: var(--text-secondary)
+}
+
+.highlightCard:hover p{
+  color: var(--text-secondary)
+}
+
+/* Content Layout */
+.contentGrid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 3rem;
+  margin-top: 3rem;
+}
+
+.mainContent {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+/* Custom Sections */
+.customSection {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  border: 1px solid #e9ecef;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.customSection h3 {
+  color: var(--text-primary, #2c3e50);
+  margin-bottom: 1.5rem;
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+
+.occasionsList,
+.packagesList,
+.activitiesList {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.occasionItem,
+.packageItem {
+  padding: 1rem;
+  background: #f8f9fa;
+  border-radius: 8px;
+  border-left: 4px solid var(--primary-color, #50a4cbff);
+  transition: all 0.3s ease;
+}
+
+.occasionItem:hover,
+.packageItem:hover {
+  background: #e9ecef;
+  transform: translateX(5px);
+}
+
+.packageItem h4 {
+  color: var(--text-primary, #2c3e50);
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.packageItem p {
+  color: var(--text-secondary, #7f8c8d);
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+.activityItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1rem;
+  background: #f8f9fa;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.activityItem:hover {
+  background: #e9ecef;
+  transform: translateX(5px);
+}
+
+.activityIcon {
+  font-size: 2rem;
+  flex-shrink: 0;
+}
+
+.activityItem h4 {
+  color: var(--text-primary, #2c3e50);
+  margin: 0 0 0.5rem 0;
+  font-weight: 600;
+}
+
+.activityItem p {
+  color: var(--text-secondary, #7f8c8d);
+  margin: 0;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .contentGrid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .yachtTitle {
+    font-size: 2.5rem;
+  }
+  
+  .heroSection {
+    padding: 2rem 1rem;
+  }
+  
+  .quickInfo {
+    flex-direction: column;
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .yachtPage {
+    max-width: 95vw;
+    padding: 1rem;
+  }
+  
+  .yachtTitle {
+    font-size: 2rem;
+  }
+  
+  .yachtSubtitle {
+    font-size: 1.1rem;
+  }
+  
+  .priceDisplay {
+    font-size: 1.5rem;
+    padding: 0.75rem 1.5rem;
+  }
+  
+  .highlightGrid,
+  .partyGrid,
+  .familyGrid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .highlightCard,
+  .partyCard,
+  .familyCard {
+    padding: 1.5rem;
+  }
+  
+  .customSection {
+    padding: 1.5rem;
+  }
+}

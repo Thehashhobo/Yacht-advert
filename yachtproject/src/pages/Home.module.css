@@ -7,7 +7,6 @@
     min-width: 50vw;
     background-size: cover;
     background-position: center;
-    
 }
 
 /* Hero Content */
@@ -33,7 +32,6 @@
   text-shadow: 
     2px 2px 4px rgba(0, 0, 0, 0.8),
     0 0 15px rgba(255, 255, 255, 0.3);
-  
 }
 
 .heroContent h3{
@@ -41,7 +39,6 @@
   text-shadow: 
     2px 2px 4px rgba(0, 0, 0, 0.8),
     0 0 15px rgba(255, 255, 255, 0.3);
-  
 }
 
 /* Intro Section */
@@ -97,8 +94,8 @@
 }
 
 .PurchaseButton {
-  background: rgb(0, 39, 105);
-  color: var(--primary-color);
+  background: var(--secondary-color);
+  color: white;
   border: none;
   padding: 0.8rem 1.3rem;
   border-radius: 6px;
@@ -109,8 +106,8 @@
 }
 
 .PurchaseButton:hover {
-  background: #3d8bb7;
-  color: var(--text-primary);
+  background: var(--secondary-dark);
+  color: white;
   transform: translateY(-1px);
   box-shadow: 0 2px 8px rgba(80, 164, 203, 0.3);
 }
@@ -159,7 +156,6 @@
 
 .rentalContainer .introText h4 {
     opacity: 1;
-    color: #666;
     margin-bottom: 1rem;
 }
 
@@ -168,11 +164,6 @@
     margin-bottom: 1rem;
 }
 
-.rentalContainer .introText p {
-    opacity: 1;
-    color: #666;
-    padding-bottom: 0;
-}
 
 /* Form Section */
 .formContainer {
@@ -188,7 +179,6 @@
     padding: 2rem;
     border-radius: 6px;
     position: relative;
-
 }
 
 .formContent::before {
@@ -230,7 +220,6 @@
   }
 }
 
-
 /* Media Queries */
 @media (min-width: 1024px) {
     .outerDivHero {
@@ -246,14 +235,12 @@
     }
     
     .rentalContainer {
-
         padding: 2rem;
     }
 }
 
 @media (max-width: 768px) {
     .rentalContainer {
-
         padding: 0.5rem;
     }
     
@@ -274,6 +261,7 @@
     .formContent{
         padding: 2rem 0.1rem;
     }
+    
     .formContainer{
         padding: 2rem 0.5rem;
     }

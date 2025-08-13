@@ -1,0 +1,162 @@
+.bookingCard {
+  background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+  border-radius: 16px;
+  padding: 2rem;
+  border: 1px solid #e9ecef;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 6.5rem;
+}
+
+.bookingCard h3 {
+  color: var(--text-primary, #2c3e50);
+  margin-bottom: 1.5rem;
+  text-align: center;
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+
+.priceDisplay {
+  text-align: center;
+  margin-bottom: 2rem;
+  padding: 1rem;
+  background: rgba(80, 164, 203, 0.1);
+  border-radius: 12px;
+  border: 1px solid rgba(80, 164, 203, 0.2);
+}
+
+.priceAmount {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--text-primary, #50a4cbff);
+  display: block;
+  line-height: 1;
+}
+
+.priceUnit {
+  font-size: 1rem;
+  color: #666;
+  font-weight: 500;
+}
+
+.availabilitySection {
+  margin-bottom: 2rem;
+}
+
+.availabilitySection h4 {
+  color: var(--text-primary, #2c3e50);
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.availabilityList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.availabilityItem {
+  padding: 0.75rem;
+  color: var(--text-secondary, #7f8c8d);
+  border-bottom: 1px solid #e9ecef;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+.availabilityItem:last-child {
+  border-bottom: none;
+}
+
+.availabilityItem:hover {
+  background: rgba(80, 164, 203, 0.05);
+  border-radius: 8px;
+  transform: translateX(5px);
+}
+
+.availabilityIcon {
+  font-size: 1rem;
+}
+
+.buttonGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.bookNowButton,
+.inquireButton {
+  width: 100%;
+  padding: 1rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.bookNowButton {
+  background: var(--secondary-color);
+  color: white;
+  border: none;
+  box-shadow: 0 4px 12px rgba(80, 164, 203, 0.3);
+}
+
+.bookNowButton:hover {
+  background: var(--secondary-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(80, 164, 203, 0.4);
+}
+
+.inquireButton {
+  background: transparent;
+  color: var(--text-primary);
+  border: 2px solid var(--secondary-dark);
+}
+
+.inquireButton:hover {
+  background: var(--secondary-dark);
+  color: white;
+  transform: translateY(-2px);
+}
+
+.contactInfo {
+  text-align: center;
+  padding-top: 1rem;
+  border-top: 1px solid #e9ecef;
+}
+
+.contactText {
+  font-size: 0.9rem;
+  color: var(--text-secondary, #7f8c8d);
+  margin: 0;
+}
+
+.contactText a {
+  color:  var(--text-primary);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.contactText a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .bookingCard {
+    padding: 1.5rem;
+    position: static;
+  }
+  
+  .priceAmount {
+    font-size: 2rem;
+  }
+  
+  .bookingCard h3 {
+    font-size: 1.2rem;
+  }
+}

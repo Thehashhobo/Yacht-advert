@@ -36,6 +36,19 @@ const HomePage: React.FC = () => {
         </div>
       </div>
 
+      {/* rental Section */}
+
+        <div className={styles.rentalContainer}>
+          <div className={styles.introText}>
+            <h4>Ocean Wave</h4>
+            <h3>YACHT CHARTERS SINCE 2020</h3>
+            <RentalService/>
+            {/* <p>Trusted and established Yacht services provider</p> */}
+            <RentalCards/>
+          </div>
+
+      </div>
+
       {/* Intro Section */}
       <div className={styles.outerDiv}>
         <div
@@ -50,19 +63,6 @@ const HomePage: React.FC = () => {
           </div>
           <FlexCardGrid />
         </div>
-      </div>
-
-      {/* rental Section */}
-
-        <div className={styles.rentalContainer}>
-          <div className={styles.introText}>
-            <h4>Ocean Wave</h4>
-            <h3>YACHT CHARTERS SINCE 2020</h3>
-            <RentalService/>
-            {/* <p>Trusted and established Yacht services provider</p> */}
-            <RentalCards/>
-          </div>
-
       </div>
 
       {/* Form Section */}
