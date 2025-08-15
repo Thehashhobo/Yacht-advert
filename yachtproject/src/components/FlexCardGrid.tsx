@@ -1,9 +1,9 @@
 import { Card } from 'antd';
 import { useNavigate } from 'react-router-dom';
 import styles from './FlexCardGrid.module.css';
-import c1 from '../assets/c2.webp';
-import c2 from '../assets/s1.webp';
-import c4 from '../assets/c3.webp';
+import c1 from '../assets/home/c2.webp';
+import c2 from '../assets/home/s1.webp';
+import c4 from '../assets/home/c3.webp';
 
 const { Meta } = Card;
 

@@ -1,80 +1,320 @@
-/* Services Page Specific Styles */
+/* Services Page Styles */
+.servicesPage {
+  background: #ffffff;
+    font-family: "Poppins", sans-serif;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
 
 /* Hero Section */
-.outerDivR {
-    position: relative;
-    height: 65vh;
-    background-size: cover;
-    background-position: center;
+.heroSection {
+  position: relative;
+  min-height: 60vh;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-/* Hero Content */
-.rHero {
+.heroOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(44, 62, 80, 0.8) 0%, rgba(80, 164, 203, 0.1) 100%);
+  z-index: 1;
+}
+
+.heroContent {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  color: white;
+  max-width: 800px;
+  padding: 2rem;
+}
+
+.heroText h1 {
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.heroText p {
+  font-size: 1.5rem;
+  margin-bottom: 3rem;
+  line-height: 1.6;
+  opacity: 0.95;
+}
+
+.heroStats {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  margin-top: 2rem;
+}
+
+.statItem {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.statIcon {
+  display: block;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #daa520;
+  font-family: "Poppins", sans-serif;
+}
+
+.statLabel {
+  display: block;
+  font-size: 1.2rem;
+  opacity: 0.9;
+}
+
+/* Introduction Section */
+.introSection {
+  padding: 6rem 0;
+  background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+}
+
+.introContent {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.introText h2 {
+  font-size: 2.5rem;
+  color: var(--text-primary);
+  margin-bottom: 1.5rem;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+}
+
+.introText p {
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin-bottom: 2rem;
+}
+
+.benefitsList {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.benefitItem {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-size: 1rem;
+  color: var(--text-primary);
+}
+
+.benefitIcon {
+  width: 24px;
+  height: 24px;
+  background: var(--primary-dark);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+  font-weight: bold;
+  flex-shrink: 0;
+}
+
+.introImage {
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+.introImage img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.introImage:hover img {
+  transform: scale(1.05);
+}
+
+/* Services Section */
+.servicesSection {
+  padding: 6rem 0;
+  background: #ffffff;
+}
+
+.sectionHeader {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.sectionHeader h2 {
+  font-size: 2.5rem;
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+}
+
+.sectionHeader p {
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+}
+
+.servicePackage {
+  margin-bottom: 4rem;
+}
+
+.packageHeader {
+  text-align: center;
+  margin-bottom: 3rem;
+  padding: 2rem;
+  background: linear-gradient(135deg, var(--secondary-color) 0%, var(--secondary-dark) 100%);
+  border-radius: 16px;
+  color: white;
+}
+
+.packageHeader h3 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+}
+
+.packageHeader p {
+  font-size: 1rem;
+  opacity: 0.9;
+}
+
+.servicesGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.serviceCard {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  border: 1px solid #f0f0f0;
+  transition: all 0.3s ease;
+}
+
+.serviceCard:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 35px rgba(65, 105, 225, 0.2);
+  border-color: var(--secondary-color);
+}
+
+.serviceIcon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.serviceCard h4 {
+  font-size: 1.3rem;
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+}
+
+.serviceCard p {
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .heroStats {
+    gap: 2rem;
+  }
+  
+  .introContent {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  
+  .servicesGrid {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0 1rem;
+  }
+  
+  .heroText h1 {
+    font-size: 2.5rem;
+  }
+  
+  .heroText p {
+    font-size: 1.1rem;
+  }
+  
+  .heroStats {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  
+  .introText h2,
+  .sectionHeader h2{
+    font-size: 2rem;
+  }
+  
+  .servicesGrid {
+    grid-template-columns: 1fr;
+  }
+  
+  .introSection,
+  .servicesSection{
+    padding: 4rem 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .heroText h1 {
+    font-size: 2rem;
+  }
+  
+  .serviceCard {
     padding: 1.5rem;
-    text-align: center;
-    color: white;
-}
-
-/* Services Container */
-.servicesContainer {
-    position: relative;
-    background-size: cover;
-    background-position: center;
-    height: 55vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-/* Services Overlay */
-.servicesOverlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0, 0, 0, 0.6);
-    z-index: 1;
-}
-
-/* Services Content */
-.servicesContent {
-    z-index: 3;
-    text-align: center;
-    color: white;
-}
-
-/* Collapse Container */
-.collapseContainer {
-    margin: 1rem;
-}
-
-/* CTA Section */
-.ctaContainer {
-    position: relative;
-    background-size: cover;
-    background-position: center;
-    height: 40vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-/* CTA Overlay */
-.ctaOverlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0, 0, 0, 0.5);
-    z-index: 1;
-}
-
-/* CTA Content */
-.ctaContent {
-    position: relative;
-    z-index: 2;
-    text-align: center;
-    color: white;
+  }
+  
+  .packageHeader {
+    padding: 1.5rem;
+  }
+  
+  .packageHeader h3 {
+    font-size: 1.5rem;
+  }
+  
+  .ctaContent h2 {
+    font-size: 1.8rem;
+  }
 }

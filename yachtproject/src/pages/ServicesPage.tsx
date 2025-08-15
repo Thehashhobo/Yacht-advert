@@ -1,24 +1,22 @@
 import React, { useState } from 'react';
-import styles from './Services.module.css'; // Importing page-specific CSS
-import '../styles/typography.css'; // Import global typography styles
+import styles from './Services.module.css';
+import '../styles/typography.css';
 import s1 from '../assets/s1_2.webp';
 import s2 from '../assets/s2.webp';
-import m2 from '../assets/m2.webp';
-import { Collapse, Button } from 'antd';
+import m2 from '../assets/contact.webp';
+import CTASection from '../components/CTASection';
 import FlexModalForm, { FlexModalFormProps } from '../components/FlexModelForm';
 
 const ServicesPage: React.FC = () => {
-  const collapseContent = (
-    <ul style={{ padding: '1rem' }}>
-      <li>Marine Electric</li>
-      <li>Engines & Generators</li>
-      <li>Fiberglass & Gelcoat</li>
-      <li>Plumbing System</li>
-      <li>General Mechanical</li>
-      <li>Vessel Structural Repair</li>
-      <li>Interior Renovation</li>
-    </ul>
-  );
+  const serviceItems = [
+    { icon: '⚡', title: 'Marine Electric', desc: 'Complete electrical system diagnosis and repair' },
+    { icon: '🔧', title: 'Engines & Generators', desc: 'Engine maintenance and generator services' },
+    { icon: '🛠️', title: 'Fiberglass & Gelcoat', desc: 'Hull repair and cosmetic restoration' },
+    { icon: '🚿', title: 'Plumbing System', desc: 'Water system maintenance and repairs' },
+    { icon: '⚙️', title: 'General Mechanical', desc: 'Comprehensive mechanical services' },
+    { icon: '🔨', title: 'Vessel Structural Repair', desc: 'Structural integrity and safety repairs' },
+    { icon: '🏠', title: 'Interior Renovation', desc: 'Cabin upgrades and interior improvements' }
+  ];
 
   const [isModalVisible, setIsModalVisible] = useState(false);
   const handleOpenModal = () => setIsModalVisible(true);
@@ -35,59 +33,106 @@ const ServicesPage: React.FC = () => {
   ];
 
   return (
-    <div>
+    <div className={styles.servicesPage}>
       {/* Hero Section */}
-      <div className={styles.outerDivR} style={{ backgroundImage: `linear-gradient(to bottom, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.2)), url(${s1})` }}>
-        <div className={styles.rHero}>
-          <h1>Repair Services</h1>
-          <h3>We have qualified and trained technicians who provide top-tier repair and maintenance services.</h3>
+      <section className={styles.heroSection} style={{ backgroundImage: `url(${s1})` }}>
+        <div className={styles.heroOverlay}></div>
+        <div className={styles.heroContent}>
+          <div className={styles.heroText}>
+            <h1>Repair Services</h1>
+            <p>We have qualified and trained technicians who provide top-tier repair and maintenance services.</p>
+            <div className={styles.heroStats}>
+              <div className={styles.statItem}>
+                <span className={styles.statIcon}>✓</span>
+                <span className={styles.statLabel}>Certified Technicians</span>
+              </div>
+              <div className={styles.statItem}>
+                <span className={styles.statIcon}>✓</span>
+                <span className={styles.statLabel}>Quality Guarantee</span>
+              </div>
+              <div className={styles.statItem}>
+                <span className={styles.statIcon}>✓</span>
+                <span className={styles.statLabel}>Fast Service</span>
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
+      </section>
+
+      {/* Introduction Section */}
+      <section className={styles.introSection}>
+        <div className={styles.container}>
+          <div className={styles.introContent}>
+            <div className={styles.introText}>
+              <h2>Professional Yacht Services</h2>
+              <p>All services are conducted by experienced professionals with years of maritime expertise. We ensure your vessel receives the highest quality care and attention to detail.</p>
+              <div className={styles.benefitsList}>
+                <div className={styles.benefitItem}>
+                  <span className={styles.benefitIcon}>✓</span>
+                  <span>Experienced marine technicians</span>
+                </div>
+                <div className={styles.benefitItem}>
+                  <span className={styles.benefitIcon}>✓</span>
+                  <span>Quality parts and materials</span>
+                </div>
+                <div className={styles.benefitItem}>
+                  <span className={styles.benefitIcon}>✓</span>
+                  <span>Warranty on all repairs</span>
+                </div>
+                <div className={styles.benefitItem}>
+                  <span className={styles.benefitIcon}>✓</span>
+                  <span>Emergency service available</span>
+                </div>
+              </div>
+            </div>
+            <div className={styles.introImage}>
+              <img src={s2} alt="Professional yacht services" />
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* Services Section */}
-      <div className={styles.servicesContainer} style={{ backgroundImage: `url(${s2})` }}>
-        <div className={styles.servicesOverlay}></div>
-        <div className={styles.servicesContent}>
-          <h2>All services are conducted by experienced professionals</h2>
-          <Collapse 
-            className={styles.collapseContainer}
-            expandIcon={({ isActive }) => (
-              <span style={{ color: 'white', fontSize: '1.2rem', display: 'flex', alignItems: 'center' }}>
-                {isActive ? '-' : '>'}
-              </span>
-            )}
-            items={[
-              {
-                key: '1',
-                label: (
-                  <span style={{ fontWeight: 'bold', color: 'white', fontSize: '1.2rem', display: 'flex', alignItems: 'center' }}>
-                    Repairs We Offer
-                  </span>
-                ),
-                children: collapseContent,
-              },
-            ]}
-          />
+      <section className={styles.servicesSection}>
+        <div className={styles.container}>
+          <div className={styles.sectionHeader}>
+            <h2>Our Repair Services</h2>
+            <p>Comprehensive repair and maintenance solutions for all types of vessels</p>
+          </div>
+          
+          <div className={styles.servicePackage}>
+            <div className={styles.packageHeader}>
+              <h3>Complete Service Portfolio</h3>
+              <p>From routine maintenance to major repairs - we handle it all</p>
+            </div>
+            <div className={styles.servicesGrid}>
+              {serviceItems.map((service, index) => (
+                <div key={index} className={styles.serviceCard}>
+                  <div className={styles.serviceIcon}>{service.icon}</div>
+                  <h4>{service.title}</h4>
+                  <p>{service.desc}</p>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
-      </div>
+      </section>
 
       {/* CTA Section */}
-      <div className={styles.ctaContainer} style={{ backgroundImage: `url(${m2})` }}>
-        <div className={styles.ctaOverlay}></div>
-        <div className={styles.ctaContent}>
-          <h2>Minimize The Hassles and Maximize the Pleasure of Your Yachting Adventures</h2>
-          <Button type="primary" size="large" onClick={handleOpenModal}>
-            Contact Us Now
-          </Button>
-          <FlexModalForm
-            isVisible={isModalVisible}
-            onClose={handleCloseModal}
-            onSubmit={handleSubmit}
-            fields={fields}
-            title="Repair Services Inquiry"
-          />
-        </div>
-      </div>
+      <CTASection
+        title="Minimize The Hassles and Maximize the Pleasure"
+        subtitle="of Your Yachting Adventures"
+        buttonText="Contact Us Now"
+        backgroundImage={m2}
+        onButtonClick={handleOpenModal}
+      />
+      <FlexModalForm
+        isVisible={isModalVisible}
+        onClose={handleCloseModal}
+        onSubmit={handleSubmit}
+        fields={fields}
+        title="Repair Services Inquiry"
+      />
     </div>
   );
 };

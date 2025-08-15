@@ -4,10 +4,10 @@ import '../styles/typography.css';  // Import global typography styles
 import FlexCardGrid from '../components/FlexCardGrid';
 import GeneralForm from '../components/GeneralForm';
 import RentalService from '../components/RentalService';
-import big_img from '../assets/H1.jpg';
-import background1 from '../assets/b3.jpg';
+import big_img from '../assets/home/H1.jpg';
+import background1 from '../assets/home/b3.jpg';
 import RentalCards from '../components/RentalCards';
-import background2 from '../assets/b3.webp';
+import background2 from '../assets/home/b3.webp';
 
 
 const HomePage: React.FC = () => {
