@@ -1,5 +1,5 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
+// import { useNavigate } from 'react-router-dom';
 import { yachtsData } from '../../data/yachtsData';
 import YachtGallery from '../../components/yacht/YachtGallery';
 import YachtHeroSection from '../../components/yacht/YachtHeroSection';
@@ -9,7 +9,7 @@ import YachtBooking from '../../components/yacht/YachtBooking';
 import styles from './YachtPage.module.css';
 
 const Meridian: React.FC = () => {
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   const yacht = yachtsData.find(y => y.id === 'luxury-cruiser')!;
 
   return (
