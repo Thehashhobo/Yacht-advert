@@ -1,118 +1,80 @@
-// src/pages/Home.tsx
 import React from 'react';
-import '../App.css';
+import styles from './Home.module.css';  // Importing Home page-specific styles
+import '../styles/typography.css';  // Import global typography styles
 import FlexCardGrid from '../components/FlexCardGrid';
 import GeneralForm from '../components/GeneralForm';
-import big_img from '../assets/H1.webp';
-import background1 from '../assets/b1.webp';
-import background2 from '../assets/b3.webp';
-
+import RentalService from '../components/RentalService';
+import big_img from '../assets/home/H1.jpg';
+import background1 from '../assets/home/b3.jpg';
+import RentalCards from '../components/RentalCards';
+import background2 from '../assets/home/b3.webp';
 
 
 const HomePage: React.FC = () => {
   return (
     <>
+      {/* Hero Section */}
       <div
-        className="outer-div"
+        className={styles.outerDivHero}
         style={{
-          backgroundImage: `linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.2)), url(${big_img})`,
-          backgroundPosition: 'center',
-      }}
+          backgroundImage: `linear-gradient(to bottom, rgba(196, 228, 255, 0.25), rgba(168, 162, 255, 0.1)), url(${big_img})`,
+        }}
       >
-        <div
-          style={{
-            position: 'absolute',
-            top: '50%',
-            left: '50%',
-            transform: 'translate(-50%, -50%)',
-            color: 'white',
-            textAlign: 'center',
-            whiteSpace: 'normal',
-            minWidth: '70vw',
+        <div className={styles.heroContent}>
+          <h1>Ocean Wave</h1>
+          <h3>YACHT RENTAL, SERVICES AND MANAGEMENT CENTRE</h3>
+          <p>In The Greater Vancouver Area</p>
+          <div className={styles.PurchaseButtonContainer}>
+            <button className={styles.PurchaseButton}>
+              Buy Tickets
+            </button>
+            <button className={styles.PurchaseButton}>
+              Charter Boats
+            </button>
+          </div>
 
-          }}
-        >  
-          <h1 style={{ marginBottom: '5px', fontFamily: '"Poppins", serif', }}>Ocean Wave</h1>
-          <h3
-            style={{
-             fontFamily: '"Poppins", serif',
-              color: 'white',
-            }}
-          >
-            YACHT MANAGEMENT, SERVICES, REPAIR AND RENTAL CENTRE
-          </h3>
-
-          <p style={{ marginTop: '5px', fontSize: '1.3rem', fontFamily: '"Poppins", serif',}}>In The Greater Vancouver Area</p>
         </div>
       </div>
 
-      <div
-        className="outer-div-"
-        style={{
-          position: 'relative',
-          backgroundColor: 'black',
-        }}
-      >
-        <div
-          className="background-layer"
-          style={{
-            backgroundImage: `url(${background1})`,
-            filter: 'brightness(20%)',
-            position: 'absolute',
-            top: 0,
-            left: 0,
-            right: 0,
-            bottom: 0,
-            zIndex: 1,
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-          }}
-        ></div>
-        <div
-          className="intro-container"
-          style={{
-            position: 'relative',
-            zIndex: 2,
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'left',
-            justifyContent: 'center',
-            height: '100%',
-            color: 'white',
+      {/* rental Section */}
 
-            paddingTop: '1.3rem',
-          }}
-        >
-          <div style={{marginLeft:'1.5rem' }} className="intro-text">
-            
-            <h4 style={{marginBottom: '1.4rem', opacity: 0.75 }}>Ocean Wave</h4>
-            <h3>VANCOUVER YACHT MANAGEMENT, SERVICES, REPAIRS AND RENTAL CENTRE</h3>
-            <p style={{ marginTop: '0.7rem', paddingBottom: '2rem', opacity: 0.75 }}>
-              Trusted and established Yacht service provider
-            </p>
+        <div className={styles.rentalContainer}>
+          <div className={styles.introText}>
+            <h4>Ocean Wave</h4>
+            <h3>YACHT CHARTERS SINCE 2020</h3>
+            <RentalService/>
+            {/* <p>Trusted and established Yacht services provider</p> */}
+            <RentalCards/>
+          </div>
+
+      </div>
+
+      {/* Intro Section */}
+      <div className={styles.outerDiv}>
+        <div
+          className={styles.backgroundLayer}
+          style={{ backgroundImage: `url(${background1})`, opacity: "0.5"}}
+        ></div>
+        <div className={styles.introContainer}>
+          <div className={styles.introText}>
+            <h4>Ocean Wave</h4>
+            <h3>YACHT MANAGEMENT, SERVICES, REPAIRS AND RENTAL CENTRE</h3>
+            <p>Trusted and established Yacht services provider</p>
           </div>
           <FlexCardGrid />
         </div>
       </div>
 
+      {/* Form Section */}
       <div
-        className="form-container"
-        style={{
-          backgroundImage: `url(${background2})`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          padding: '2rem',
-          position: 'relative',
-        }}
+        className={styles.formContainer}
+        style={{ backgroundImage: `url(${background2})` }}
       >
-        <div style={{ backgroundColor: 'rgba(0, 0, 0, 0.7)', padding: '2rem', borderRadius: '10px' }}>
-          <h2 className="intouch" style={{ justifySelf: 'center', color: 'white' }}>
-            Get in Touch!
-          </h2>
+        <div className={styles.formContent}>
+          <h2 className={styles.intouch}>Get in Touch!</h2>
           <GeneralForm />
         </div>
       </div>
-
     </>
   );
 };

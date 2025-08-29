@@ -1,7 +1,7 @@
 import React from 'react';
 import { Button, Form, Input, Select, message } from 'antd';
 import emailjs from '@emailjs/browser';
-import '../App.css';
+import styles from './GeneralForm.module.css';
 
 const { TextArea } = Input;
 
@@ -42,65 +42,98 @@ const GeneralForm: React.FC = () => {
   };
 
   return (
-    <>
+    <div className={styles.formContainer}>
       <Form
         form={form}
         onFinish={handleFinish}
-        labelCol={{ span: 4 }}
-        wrapperCol={{ span: 16 }}
-        layout="horizontal"
-        className="custom-form"
-        style={{ maxWidth: 600, margin: '0 auto'}} // Center the form horizontally
+        layout="vertical"
+        className={styles.customForm}
       >
-        <Form.Item
-          label="Name"
-          name="Name"
-          rules={[{ required: true, message: 'Please enter your name' }]}
-          className="form-label"
-        >
-          <Input />
-        </Form.Item>
-        <Form.Item
-          label="Email"
-          name="Email"
-          rules={[
-            { required: true, message: 'Please enter your email' },
-            { type: 'email', message: 'Please enter a valid email' },
-          ]}
-          className="form-label"
-        >
-          <Input />
-        </Form.Item>
-        <Form.Item
-          label="Service"
-          name="Service"
-          className="form-label"
-        >
-          <Select>
-            <Select.Option value="Management">Management</Select.Option>
-            <Select.Option value="Repairs">Repairs</Select.Option>
-            <Select.Option value="Rentals">Rentals</Select.Option>
-          </Select>
-        </Form.Item>
-        <Form.Item
-          label="Tell us more"
-          name="Details"
-          rules={[{ required: true, message: 'Please provide more details' }]}
-          className="form-label"
-        >
-          <TextArea rows={4} />
-        </Form.Item>
-        {/* Center the button using a Form.Item with centered styling */}
-        <Form.Item
-          className="submit-button"
-          style={{ textAlign: 'center' }}
-        >
-          <Button type="primary" htmlType="submit">
-            Submit
+        <div className={styles.formItem}>
+          <Form.Item
+            label={
+              <span className={styles.formLabel}>
+                Name <span className={styles.requiredIndicator}>*</span>
+              </span>
+            }
+            name="Name"
+            rules={[{ required: true, message: 'Please enter your name' }]}
+          >
+            <Input 
+              className={styles.formInput}
+              placeholder="Enter your full name"
+            />
+          </Form.Item>
+        </div>
+
+        <div className={styles.formItem}>
+          <Form.Item
+            label={
+              <span className={styles.formLabel}>
+                Email <span className={styles.requiredIndicator}>*</span>
+              </span>
+            }
+            name="Email"
+            rules={[
+              { required: true, message: 'Please enter your email' },
+              { type: 'email', message: 'Please enter a valid email' },
+            ]}
+          >
+            <Input 
+              className={styles.formInput}
+              placeholder="Enter your email address"
+              type="email"
+            />
+          </Form.Item>
+        </div>
+
+        <div className={styles.formItem}>
+          <Form.Item
+            label={<span className={styles.formLabel}>Service</span>}
+            name="Service"
+          >
+            <Select
+              className={styles.formSelect}
+              placeholder="Select a service (optional)"
+              allowClear
+            >
+              <Select.Option value="Management">Yacht Management</Select.Option>
+              <Select.Option value="Repairs">Repairs & Maintenance</Select.Option>
+              <Select.Option value="Rentals">Yacht Rentals</Select.Option>
+              <Select.Option value="Other">Other Services</Select.Option>
+            </Select>
+          </Form.Item>
+        </div>
+
+        <div className={styles.formItem}>
+          <Form.Item
+            label={
+              <span className={styles.formLabel}>
+                Tell us more <span className={styles.requiredIndicator}>*</span>
+              </span>
+            }
+            name="Details"
+            rules={[{ required: true, message: 'Please provide more details' }]}
+          >
+            <TextArea 
+              className={styles.formTextArea}
+              rows={4}
+              placeholder="Please describe your requirements or questions..."
+            />
+          </Form.Item>
+        </div>
+
+        <div className={styles.submitButtonContainer}>
+          <Button 
+            type="primary" 
+            htmlType="submit"
+            className={styles.submitButton}
+          >
+            Send Message
           </Button>
-        </Form.Item>
+        </div>
       </Form>
-    </>
+    </div>
   );
 };
 

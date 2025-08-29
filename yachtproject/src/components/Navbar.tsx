@@ -1,17 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useLocation, Link } from 'react-router-dom';
-import { Layout, Menu, Dropdown, Button } from 'antd';
-import { MenuOutlined } from '@ant-design/icons';
 import { useMediaQuery } from 'react-responsive';
-import logo from '../assets/logo.png';
-
-const { Header } = Layout;
+import logo from '../assets/logo3.png';
+import styles from './Navbar.module.css';
 
 const Navbar: React.FC = () => {
   const location = useLocation();
-
-  // Determine if the viewport is small
   const isSmallScreen = useMediaQuery({ maxWidth: 768 });
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   // Determine the active menu item based on the current location path
   const getSelectedKey = () => {
@@ -28,80 +24,107 @@ const Navbar: React.FC = () => {
     }
   };
 
-  // Define the menu items with `Link` for navigation
-  const items = [
-    { key: '1', label: <Link to="/">Home</Link> },
-    { key: '2', label: <Link to="/management">Yacht Management</Link> },
-    { key: '3', label: <Link to="/services">Services and Repair</Link> },
-    { key: '4', label: <Link to="/rentals">Yacht Rentals</Link> },
+  // Define the left menu items
+  const leftItems = [
+    { key: '1', label: 'Home', path: '/' },
+    { key: '2', label: 'Yacht Management', path: '/management' },
   ];
 
-  // Dropdown menu for small screens
-  const dropdownMenu = (
-    <Menu items={items.map(item => ({ key: item.key, label: item.label }))} />
-  );
+  // Define the right menu items
+  const rightItems = [
+    { key: '3', label: 'Services and Repair', path: '/services' },
+    { key: '4', label: 'Yacht Rentals', path: '/rentals' },
+  ];
+
+  // All items for mobile dropdown
+  const allItems = [...leftItems, ...rightItems];
+
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen);
+  };
+
+  const closeMobileMenu = () => {
+    setIsMobileMenuOpen(false);
+  };
 
   return (
-    <Header
-      style={{
-        display: 'flex',
-        alignItems: 'center',
-        position: 'sticky',
-        top: 0,
-        overflow: 'hidden',
-        zIndex: 5,
-        padding: '25px',
-      }}
-    >
-      <div className="demo-logo" />
-      <img src={logo} alt="logo" style={{ height: '50px', marginLeft: '5px', marginTop: '10px' }} />
-      <h3
-        style={{
-          fontFamily: '"Poppins", serif',
-          fontSize: '1.7rem',
-          color: '#5EBFEB',
-          marginLeft: '10px',
-          whiteSpace: 'nowrap',
-        }}
-      >
-        Ocean Wave
-      </h3>
-
+    <header className={styles.navbar}>
       {isSmallScreen ? (
-        <Dropdown overlay={dropdownMenu} trigger={['click']} placement="bottomRight">
-          <Button
-            icon={<MenuOutlined style={{ fontSize: '26px' }} />} // Adjust the icon size
-            shape="circle"
-            style={{
-              marginLeft: 'auto',
-              width: '60px', // Set a fixed width
-              height: '60px', // Set a fixed height
-              fontSize: '24px', // Increase the font size of the icon
-              backgroundColor: '#001529', // Background color
-              color: '#fff', // Icon color
-              border: 'none', // Remove the border
-              display: 'flex', // Center the icon inside
-              alignItems: 'center', // Center vertically
-              justifyContent: 'center', // Center horizontally
-            }}
-          />
-        </Dropdown>
+        <>
+          <div className={styles.mobileHeader}>
+            <div className={styles.logoContainer}>
+              <img src={logo} alt="logo" className={styles.logoMobile} />
+            </div>
+            <button 
+              className={styles.mobileMenuButton}
+              onClick={toggleMobileMenu}
+              aria-label="Toggle mobile menu"
+            >
+              <span className={styles.hamburger}></span>
+              <span className={styles.hamburger}></span>
+              <span className={styles.hamburger}></span>
+            </button>
+          </div>
+          
+          {/* Mobile Menu Dropdown */}
+          {isMobileMenuOpen && (
+            <div className={styles.mobileMenuDropdown}>
+              <nav className={styles.mobileNav}>
+                {allItems.map((item) => (
+                  <Link
+                    key={item.key}
+                    to={item.path}
+                    className={`${styles.mobileNavLink} ${
+                      getSelectedKey() === item.key ? styles.active : ''
+                    }`}
+                    onClick={closeMobileMenu}
+                  >
+                    {item.label}
+                  </Link>
+                ))}
+              </nav>
+            </div>
+          )}
+        </>
       ) : (
-        <Menu
-          theme="dark"
-          mode="horizontal"
-          selectedKeys={[getSelectedKey()]} // Only highlight active page on larger screens
-          items={items}
-          style={{
-            flex: 1,
-            minWidth: 0,
-            marginLeft: '10px',
-            display: 'flex',
-            justifyContent: 'right',
-          }}
-        />
+        <>
+          {/* Left Menu */}
+          <nav className={styles.leftNav}>
+            {leftItems.map((item) => (
+              <Link
+                key={item.key}
+                to={item.path}
+                className={`${styles.navLink} ${
+                  getSelectedKey() === item.key ? styles.active : ''
+                }`}
+              >
+                {item.label}
+              </Link>
+            ))}
+          </nav>
+          
+          {/* Center Logo */}
+          <div className={styles.logoContainer}>
+            <img src={logo} alt="logo" className={styles.logo} />
+          </div>
+          
+          {/* Right Menu */}
+          <nav className={styles.rightNav}>
+            {rightItems.map((item) => (
+              <Link
+                key={item.key}
+                to={item.path}
+                className={`${styles.navLink} ${
+                  getSelectedKey() === item.key ? styles.active : ''
+                }`}
+              >
+                {item.label}
+              </Link>
+            ))}
+          </nav>
+        </>
       )}
-    </Header>
+    </header>
   );
 };
 

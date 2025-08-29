@@ -1,77 +1,140 @@
-
-import React from 'react';
-import '../App.css';
+import React, { useRef } from 'react';
+import styles from './Rental.module.css';
+import '../styles/typography.css';
 import RentalCard from '../components/RentalCards';
-import r1 from '../assets/H2.webp';
-import background1 from '../assets/b1.webp';
-
-
+// import CaptainsSection from '../components/CaptainsSection';
+// import ReviewsSection from '../components/ReviewsSection';
+import CTASection from '../components/CTASection';
+import r1 from '../assets/rental/R1.webp';
+import r2 from '../assets/rental/R2.webp';
+import m2 from '../assets/contact.webp';
 
 const RentalPage: React.FC = () => {
-  
+  const packagesRef = useRef<HTMLElement>(null);
+
+  const MoveToListings = () => {
+    packagesRef.current?.scrollIntoView({ 
+      behavior: 'smooth',
+      block: 'start'
+    });
+  };
+
+  const rentalFeatures = [
+    { icon: '🚤', title: 'Premium Fleet', desc: 'Modern, well-maintained vessels' },
+    { icon: '⚓', title: 'Full Service', desc: 'Captain, crew, and provisions included' },
+    { icon: '🌊', title: 'Scenic Routes', desc: 'Explore Vancouver\'s stunning coastline' },
+    { icon: '🎉', title: 'Event Ready', desc: 'Perfect for celebrations and gatherings' },
+    { icon: '🛡️', title: 'Fully Insured', desc: 'Complete coverage and safety certified' },
+    { icon: '🏆', title: '5-Star Service', desc: 'Exceptional customer satisfaction' }
+  ];
+
   return (
-    <>
-    <div
-        className="outer-div-r"
-        style={{
-            backgroundImage: `linear-gradient(to bottom, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.4)), url(${r1})`,
-            backgroundPosition: 'bottom',
-            backgroundSize: 'cover',
-            height: '65vh',
-        }}
-    >
-
-        <div className="r-hero" style={{padding: '2rem', paddingTop: '1rem'}}>
-        <h1 style={{ color: 'white', marginBottom:'0.5rem', fontFamily: '"Poppins", serif'}}>Vancouver Yacht Charters </h1>
-        <h3 style={{ color: 'white'}}>We offer charter experiences for any occasion, from family outings to celebrations.
-        Explore our packages below or contact us for more details.</h3>
+    <div className={styles.rentalPage}>
+      {/* Hero Section */}
+      <section className={styles.heroSection} style={{ backgroundImage: `url(${r1})` }}>
+        <div className={styles.heroOverlay}></div>
+        <div className={styles.heroContent}>
+          <div className={styles.heroText}>
+            <h1>Vancouver Yacht Charters</h1>
+            <p>We offer charter experiences for any occasion, from family outings to celebrations. Experience the beauty of British Columbia's coastline aboard our luxury vessels.</p>
+            <div className={styles.heroStats}>
+              <div className={styles.statItem}>
+                <span className={styles.statNumber}>150+</span>
+                <span className={styles.statLabel}>Successful Charters</span>
+              </div>
+              <div className={styles.statItem}>
+                <span className={styles.statNumber}>5★</span>
+                <span className={styles.statLabel}>Average Rating</span>
+              </div>
+              <div className={styles.statItem}>
+                <span className={styles.statNumber}>12</span>
+                <span className={styles.statLabel}>Luxury Vessels</span>
+              </div>
+            </div>
+          </div>
         </div>
+      </section>
 
+      {/* Introduction Section */}
+      <section className={styles.introSection}>
+        <div className={styles.container}>
+          <div className={styles.introContent}>
+            <div className={styles.introText}>
+              <h2>Luxury Charter Experiences</h2>
+              <p>Discover the breathtaking beauty of Vancouver's waters with our premium yacht charter services. Whether you're planning a romantic getaway, corporate event, or family celebration, we provide unforgettable experiences on the water.</p>
+              <div className={styles.benefitsList}>
+                <div className={styles.benefitItem}>
+                  <span className={styles.benefitIcon}>✓</span>
+                  <span>Professional licensed captains</span>
+                </div>
+                <div className={styles.benefitItem}>
+                  <span className={styles.benefitIcon}>✓</span>
+                  <span>Gourmet catering options available</span>
+                </div>
+                <div className={styles.benefitItem}>
+                  <span className={styles.benefitIcon}>✓</span>
+                  <span>Flexible itineraries and destinations</span>
+                </div>
+                <div className={styles.benefitItem}>
+                  <span className={styles.benefitIcon}>✓</span>
+                  <span>All safety equipment included</span>
+                </div>
+              </div>
+            </div>
+            <div className={styles.introImage}>
+              <img src={r2} alt="Luxury yacht charter experience" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Features Section */}
+      <section className={styles.featuresSection}>
+        <div className={styles.container}>
+          <div className={styles.sectionHeader}>
+            <h2>Why Choose Our Charter Service</h2>
+            <p>Experience the difference with our premium yacht charter offerings</p>
+          </div>
+          <div className={styles.featuresGrid}>
+            {rentalFeatures.map((feature, index) => (
+              <div key={index} className={styles.featureCard}>
+                <div className={styles.featureIcon}>{feature.icon}</div>
+                <h4>{feature.title}</h4>
+                <p>{feature.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Packages Section */}
+      <section ref={packagesRef} className={styles.packagesSection}>
+        <div className={styles.container}>
+          <div className={styles.sectionHeader}>
+            <h2>Charter Packages</h2>
+            <p>Choose the perfect package for your adventure</p>
+          </div>
+          <div className={styles.packagesContent}>
+            <RentalCard />
+          </div>
+        </div>
+      </section>
+
+      {/* Captains Section */}
+      {/* <CaptainsSection /> */}
+
+      {/* Reviews Section */}
+      {/* <ReviewsSection /> */}
+
+      {/* CTA Section */}
+      <CTASection
+        title="Ready to Set Sail?"
+        subtitle="Book your unforgettable yacht charter experience today and create memories that will last a lifetime."
+        buttonText="Book Your Charter"
+        backgroundImage={m2}
+        onButtonClick={MoveToListings}
+      />
     </div>
-    <div
-        className="outer-div-r"
-        style={{
-          position: 'relative',
-          backgroundColor: 'black',
-        }}
-      >
-        <div
-          className="background-layer"
-          style={{
-            backgroundImage: `url(${background1})`,
-            filter: 'brightness(20%)',
-            position: 'absolute',
-            top: 0,
-            left: 0,
-            right: 0,
-            bottom: 0,
-            zIndex: 0,
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-          }}
-        ></div>
-        
-        <div
-          className="intro-container-r"
-          style={{
-            position: 'relative',
-            zIndex: 2,
-            alignItems: 'left',
-            justifyContent: 'center',
-
-            color: 'white',
-            padding: '0.8rem',
-          }}
-        >
-        <h1 style={{color: 'white', justifySelf: 'center', fontFamily: '"Poppins", serif'}}>Choose a Package</h1>
-        <p style={{color: 'white', marginTop:'0.3rem',marginBottom:'-2rem' ,justifySelf: 'center'}}>
-
-        </p>
-        <RentalCard/> 
-        </div>
-       
-      </div>
-    </>
   );
 };
 

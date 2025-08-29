@@ -1,0 +1,208 @@
+/* General Form Component Styles */
+
+.formContainer {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 2rem;
+  z-index: 5;
+}
+
+.customForm {
+  background: rgb(255, 255, 255);
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 
+    0 25px 60px rgba(0, 0, 0, 0.25),
+    0 10px 30px rgba(0, 0, 0, 0.15),
+    inset 0 1px 0 rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(20px);
+  border: 3px solid rgba(80, 164, 203, 0.3);
+  opacity: 1;
+}
+
+.formItem {
+  margin-bottom: 1.5rem;
+}
+
+.formLabel {
+  font-weight: 600;
+  color: var(--text-primary);
+  font-size: 0.95rem;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+.formInput {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 2px solid #e1e5e9;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  background: white;
+}
+
+.formInput:focus {
+  border-color: var(--primary-color, #50a4cbff);
+  box-shadow: 0 0 0 3px rgba(80, 164, 203, 0.1);
+  outline: none;
+}
+
+.formInput:hover {
+  border-color: #c1c8cd;
+}
+
+.formSelect {
+  width: 100%;
+}
+
+.formSelect .ant-select-selector {
+  padding: 0.5rem 1rem !important;
+  border: 2px solid #e1e5e9 !important;
+  border-radius: 8px !important;
+  height: auto !important;
+  min-height: 48px;
+  transition: all 0.3s ease;
+}
+
+.formSelect .ant-select-selector:hover {
+  border-color: #c1c8cd !important;
+}
+
+.formSelect.ant-select-focused .ant-select-selector {
+  border-color: var(--primary-color, #50a4cbff) !important;
+  box-shadow: 0 0 0 3px rgba(80, 164, 203, 0.1) !important;
+}
+
+.formTextArea {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 2px solid #e1e5e9;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  background: white;
+  resize: vertical;
+  min-height: 120px;
+  font-family: inherit;
+}
+
+.formTextArea:focus {
+  border-color: var(--primary-color, #50a4cbff);
+  box-shadow: 0 0 0 3px rgba(80, 164, 203, 0.1);
+  outline: none;
+}
+
+.formTextArea:hover {
+  border-color: #c1c8cd;
+}
+
+.submitButtonContainer {
+  text-align: center;
+  margin-top: 2rem;
+  padding-top: 1rem;
+}
+
+.submitButton {
+  background: linear-gradient(135deg, var(--primary-color, #50a4cbff) 0%, #3d8bb7 100%);
+  border: none;
+  padding: 0.875rem 2.5rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(80, 164, 203, 0.3);
+  min-width: 140px;
+}
+
+.submitButton:hover {
+  background: var(--secondary-color);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(80, 164, 203, 0.4);
+}
+
+.submitButton:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 8px rgba(80, 164, 203, 0.3);
+}
+
+.submitButton:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.errorMessage {
+  color: #ff4d4f;
+  font-size: 0.85rem;
+  margin-top: 0.25rem;
+  display: block;
+}
+
+.requiredIndicator {
+  color: #ff4d4f;
+  margin-left: 0.25rem;
+}
+
+/* Form field spacing and layout */
+.fieldGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .formContainer {
+    padding: 1rem;
+  }
+  
+  .customForm {
+    padding: 1.5rem;
+    margin: 0 1rem;
+  }
+  
+  .submitButton {
+    width: 100%;
+    padding: 1rem 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .customForm {
+    padding: 1rem;
+    margin: 0 0.5rem;
+  }
+  
+  .formLabel {
+    font-size: 0.9rem;
+  }
+  
+  .formInput,
+  .formTextArea {
+    font-size: 0.95rem;
+  }
+}
+
+/* Override Ant Design styles */
+.customForm .ant-form-item {
+  margin-bottom: 0 !important;
+}
+
+.customForm .ant-form-item-label {
+  padding: 0 !important;
+}
+
+.customForm .ant-form-item-label > label {
+  color: #333 !important;
+  font-weight: 600 !important;
+}
+
+.customForm .ant-form-item-explain-error {
+  color: #ff4d4f !important;
+  font-size: 0.85rem !important;
+  margin-top: 0.25rem !important;
+}

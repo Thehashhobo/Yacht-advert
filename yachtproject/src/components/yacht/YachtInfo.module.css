@@ -1,0 +1,143 @@
+.yachtInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.descriptionSection h2,
+.featuresSection h3,
+.amenitiesSection h3 {
+  color: var(--text-primary, #2c3e50);
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+}
+
+.descriptionSection h2 {
+  font-size: 2rem;
+  border-bottom: 3px solid var(--primary-color, #50a4cbff);
+  padding-bottom: 0.5rem;
+  display: inline-block;
+}
+
+.featuresSection h3,
+.amenitiesSection h3 {
+  font-size: 1.4rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.featuresSection h3::before {
+  content: '🎯';
+  font-size: 1.2rem;
+}
+
+.amenitiesSection h3::before {
+  content: '⭐';
+  font-size: 1.2rem;
+}
+
+.description {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: var(--text-secondary, #7f8c8d);
+  background: #f8f9fa;
+  padding: 1.5rem;
+  border-radius: 12px;
+  border-left: 4px solid var(--primary-color, #50a4cbff);
+  margin: 0;
+}
+
+.featuresList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.featureTag {
+  background: var(--primary-color, #50a4cbff);
+  color: var(--text-primary);
+  padding: 0.75rem 1.5rem;
+  border-radius: 25px;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(80, 164, 203, 0.3);
+}
+
+.featureTag:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(80, 164, 203, 0.4);
+}
+
+.amenitiesGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1rem;
+}
+
+.amenityItem {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  background: white;
+  border-radius: 8px;
+  border: 1px solid #e9ecef;
+  transition: all 0.3s ease;
+}
+
+.amenityItem:hover {
+  background: #f8f9fa;
+  border-color: var(--primary-color, #50a4cbff);
+  transform: translateX(5px);
+}
+
+.amenityIcon {
+  color: var(--primary-dark);
+  font-weight: bold;
+  font-size: 1.2rem;
+  width: 20px;
+  text-align: center;
+}
+
+.amenityText {
+  color: var(--text-secondary, #7f8c8d);
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .yachtInfo {
+    gap: 2rem;
+  }
+  
+  .descriptionSection h2 {
+    font-size: 1.6rem;
+  }
+  
+  .featuresSection h3,
+  .amenitiesSection h3 {
+    font-size: 1.2rem;
+  }
+  
+  .description {
+    font-size: 1rem;
+    padding: 1rem;
+  }
+  
+  .featureTag {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+  }
+  
+  .amenitiesGrid {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+  
+  .amenityItem {
+    padding: 0.75rem;
+  }
+}

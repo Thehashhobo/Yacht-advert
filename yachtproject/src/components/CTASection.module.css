@@ -1,0 +1,90 @@
+/* CTA Section */
+.ctaSection {
+  position: relative;
+  padding: 6rem 0;
+  background-size: cover;
+  background-position: center;
+  text-align: center;
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.heroOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(44, 62, 80, 0.8) 0%, rgba(80, 164, 203, 0.6) 100%);
+  z-index: 1;
+}
+
+.ctaContent {
+  position: relative;
+  z-index: 2;
+  color: white;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.ctaContent h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.ctaContent p {
+  font-size: 1.1rem;
+  margin-bottom: 3rem;
+  line-height: 1.7;
+  opacity: 0.95;
+}
+
+.ctaButton {
+  background: var(--secondary-color) !important;
+  border-color: var(--secondary-color) !important;
+  padding: 1rem 2.5rem !important;
+  height: auto !important;
+  font-size: 1.1rem !important;
+  font-weight: 600 !important;
+  border-radius: 25px !important;
+  box-shadow: 0 4px 15px rgba(65, 105, 225, 0.3) !important;
+  transition: all 0.3s ease !important;
+}
+
+.ctaButton:hover {
+  background: var(--secondary-dark) !important;
+  border-color: var(--secondary-dark) !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 6px 20px rgba(65, 105, 225, 0.4) !important;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .ctaContent h2 {
+    font-size: 2rem;
+  }
+  
+  .ctaContent p {
+    font-size: 1rem;
+  }
+  
+  .ctaSection {
+    padding: 4rem 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .ctaContent h2 {
+    font-size: 1.8rem;
+  }
+  
+  .ctaContent {
+    padding: 0 1rem;
+  }
+}

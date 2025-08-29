@@ -1,0 +1,268 @@
+/* Home Page Specific Styles */
+
+/* Hero Section */
+.outerDivHero {
+    position: relative;
+    min-height: 70vh;
+    min-width: 50vw;
+    background-size: cover;
+    background-position: center;
+}
+
+/* Hero Content */
+.heroContent {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-align: center;
+    white-space: normal;
+    min-width: 80vw;
+    background: rgba(0, 0, 0, 0.12);
+    backdrop-filter: blur(1.5px);
+    border-radius: 155px;
+    padding: 40px;
+    border: 0px dashed rgba(255, 255, 255, 0.1);
+    animation: fadeInUpCentered 1s ease-out;
+}
+
+.heroContent h1{
+  color: rgb(235, 235, 235);
+  text-shadow: 
+    2px 2px 4px rgba(0, 0, 0, 0.8),
+    0 0 15px rgba(255, 255, 255, 0.3);
+}
+
+.heroContent h3{
+  color: rgb(235, 235, 235);
+  text-shadow: 
+    2px 2px 4px rgba(0, 0, 0, 0.8),
+    0 0 15px rgba(255, 255, 255, 0.3);
+}
+
+/* Intro Section */
+.outerDiv {
+    position: relative;
+    background-color: var(--primary-color);
+}
+
+.backgroundLayer {
+    filter: blur(1.5px);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+    background-size: cover;
+    background-position: center;
+}
+
+.introContainer {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content: center;
+    height: 90%;
+    color: white;
+    padding-top: 1.3rem;
+    padding-bottom: 1.3rem;
+}
+
+.introText {
+    color: var(--text-primary);
+}
+
+.introText h4 {
+    opacity: 0.75;
+}
+
+.introText p {
+    padding-bottom: 2rem;
+    opacity: 0.75;
+}
+
+.PurchaseButtonContainer{
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
+.PurchaseButton {
+  background: var(--secondary-color);
+  color: white;
+  border: none;
+  padding: 0.8rem 1.3rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1.2rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.PurchaseButton:hover {
+  background: var(--secondary-dark);
+  color: white;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(80, 164, 203, 0.3);
+}
+
+/* Rental Section */
+.rentalContainer {
+    position: relative;
+    z-index: 1;
+    padding: 2rem;
+    background: var(--primary-color);
+    border: 1px solid #e0e0e0;
+    box-shadow: 
+        0 2px 10px rgba(0, 0, 0, 0.1),
+        0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+.rentalContainer::before {
+    content: '';
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    right: 15px;
+    bottom: 15px;
+    border: 2px solid #f0f0f0;
+    pointer-events: none;
+}
+
+.rentalContainer::after {
+    content: '';
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    right: 8px;
+    bottom: 8px;
+    border: 1.5px solid #f8f8f8;
+    pointer-events: none;
+}
+
+.rentalContainer .introText {
+    margin: 0;
+    color: var(--nav-text);
+    text-align: center;
+    background: transparent;
+    padding: 1rem;
+}
+
+.rentalContainer .introText h4 {
+    opacity: 1;
+    margin-bottom: 1rem;
+}
+
+.rentalContainer .introText h3 {
+    color: var(--nav-text);
+    margin-bottom: 1rem;
+}
+
+
+/* Form Section */
+.formContainer {
+    background-size: cover;
+    background-position: center;
+    padding: 2rem;
+    position: relative;
+    z-index: 1;
+}
+
+.formContent {
+    background-color: rgba(237, 228, 223, 0.8);
+    padding: 2rem;
+    border-radius: 6px;
+    position: relative;
+}
+
+.formContent::before {
+    content: '';
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    right: 15px;
+    bottom: 15px;
+    border: 2px solid #f0f0f0;
+    pointer-events: none;
+}
+
+.formContent::after {
+    content: '';
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    right: 8px;
+    bottom: 8px;
+    border: 1.5px solid #f8f8f8;
+    pointer-events: none;
+}
+
+.intouch {
+    justify-self: center;
+    color: var(--text-primary);
+}
+
+/* Fade in animation for centered elements */
+@keyframes fadeInUpCentered {
+  from {
+    opacity: 0;
+    transform: translate(-50%, calc(-50% + 30px));
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+}
+
+/* Media Queries */
+@media (min-width: 1024px) {
+    .outerDivHero {
+        min-height: 95vh;
+    }
+
+    .heroContent{
+        top: 40%;
+    }
+
+    .introText {
+        margin-left: 5rem;
+    }
+    
+    .rentalContainer {
+        padding: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .rentalContainer {
+        padding: 0.5rem;
+    }
+    
+    .rentalContainer::before {
+        top: 10px;
+        left: 10px;
+        right: 10px;
+        bottom: 10px;
+    }
+    
+    .rentalContainer::after {
+        top: 5px;
+        left: 5px;
+        right: 5px;
+        bottom: 5px;
+    }
+
+    .formContent{
+        padding: 2rem 0.1rem;
+    }
+    
+    .formContainer{
+        padding: 2rem 0.5rem;
+    }
+}
