@@ -4,7 +4,6 @@ import '../styles/typography.css';
 import m1 from '../assets/management/m1.webp';
 import m2 from '../assets/contact.webp';
 import m3 from '../assets/management/m3.webp';
-import {Button } from 'antd';
 import CTASection from '../components/CTASection';
 import FlexModalForm, { FlexModalFormProps } from '../components/FlexModelForm';
 
@@ -150,7 +149,6 @@ const ManagementPage: React.FC = () => {
 
       {/* Confidence Section */}
       <section className={styles.confidenceSection}>
-        <div className={styles.heroOverlay}></div>
         <div className={styles.confidenceContent}>
           <h2>Set Sail with Complete Confidence</h2>
           <p>Experience worry-free yachting with our all-inclusive yacht management and crewing services. Focus on enjoying the water while we handle everything else.</p>

@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import styles from './FlexCardGrid.module.css';
 import c1 from '../assets/home/c2.webp';
 import c2 from '../assets/home/s1.webp';
-import c4 from '../assets/home/c3.webp';
+import c4 from '../assets/b/5.webp';
 
 const { Meta } = Card;
 

@@ -2,11 +2,11 @@ import React, { useRef } from 'react';
 import styles from './Rental.module.css';
 import '../styles/typography.css';
 import RentalCard from '../components/RentalCards';
-import CaptainsSection from '../components/CaptainsSection';
-import ReviewsSection from '../components/ReviewsSection';
+// import CaptainsSection from '../components/CaptainsSection';
+// import ReviewsSection from '../components/ReviewsSection';
 import CTASection from '../components/CTASection';
-import r1 from '../assets/H2.webp';
-import r2 from '../assets/b1.webp';
+import r1 from '../assets/rental/R1.webp';
+import r2 from '../assets/rental/R2.webp';
 import m2 from '../assets/contact.webp';
 
 const RentalPage: React.FC = () => {
@@ -108,12 +108,11 @@ const RentalPage: React.FC = () => {
       </section>
 
       {/* Packages Section */}
-      <section ref={packagesRef} className={styles.packagesSection} style={{ backgroundImage: `url(${r2})` }}>
-        <div className={styles.heroOverlay}></div>
+      <section ref={packagesRef} className={styles.packagesSection}>
         <div className={styles.container}>
           <div className={styles.sectionHeader}>
-            <h2 style={{ color: 'white' }}>Charter Packages</h2>
-            <p style={{ color: 'rgba(255, 255, 255, 0.9)' }}>Choose the perfect package for your adventure</p>
+            <h2>Charter Packages</h2>
+            <p>Choose the perfect package for your adventure</p>
           </div>
           <div className={styles.packagesContent}>
             <RentalCard />
@@ -122,10 +121,10 @@ const RentalPage: React.FC = () => {
       </section>
 
       {/* Captains Section */}
-      <CaptainsSection />
+      {/* <CaptainsSection /> */}
 
       {/* Reviews Section */}
-      <ReviewsSection />
+      {/* <ReviewsSection /> */}
 
       {/* CTA Section */}
       <CTASection

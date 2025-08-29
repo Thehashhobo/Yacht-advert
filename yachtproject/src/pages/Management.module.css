@@ -154,7 +154,7 @@
 /* Services Section */
 .servicesSection {
   padding: 6rem 0;
-  background: #ffffff;
+  background: var(--primary-color);
 }
 
 .sectionHeader {
@@ -245,13 +245,14 @@
   padding: 6rem 0;
   background-size: cover;
   background-position: center;
+  background-color: white;
   text-align: center;
 }
 
 .confidenceContent {
   position: relative;
   z-index: 2;
-  color: white;
+  color: var(--text-primary);
   max-width: 800px;
   margin: 0 auto;
   padding: 0 2rem;
