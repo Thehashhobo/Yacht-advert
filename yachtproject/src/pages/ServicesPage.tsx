@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import styles from './Services.module.css';
 import '../styles/typography.css';
 import s1 from '../assets/service/s1.webp';
-import s2 from '../assets/service/s2.webp';
+import s2 from '../assets/service/S2.webp';
 import m2 from '../assets/contact.webp';
 import CTASection from '../components/CTASection';
 import FlexModalForm, { FlexModalFormProps } from '../components/FlexModelForm';
