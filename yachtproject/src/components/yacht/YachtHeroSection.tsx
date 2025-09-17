@@ -1,5 +1,4 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
 import styles from './YachtHeroSection.module.css';
 import { YachtData } from '../../data/yachtsData';
 
@@ -8,12 +7,41 @@ interface YachtHeroSectionProps {
 }
 
 const YachtHeroSection: React.FC<YachtHeroSectionProps> = ({ yacht }) => {
-  const navigate = useNavigate();
-
   const handleCheckAvailability = () => {
-    // Navigate to booking form or contact page
-    navigate('/', { state: { selectedYacht: yacht.title } });
+    const bookingSection = document.getElementById('booking-section');
+    if (bookingSection) {
+      const elementPosition = bookingSection.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - 80; // Add some offset
+      
+      console.log('Scrolling to:', offsetPosition);
+      
+      // Try with requestAnimationFrame for better smoothness
+      const startPosition = window.pageYOffset;
+      const distance = offsetPosition - startPosition;
+      const duration = 1000; // 1 second
+      let start: number | null = null;
+
+      function step(timestamp: number) {
+        if (!start) start = timestamp;
+        const progress = timestamp - start;
+        const percentage = Math.min(progress / duration, 1);
+        
+        // Easing function for smooth animation
+        const ease = percentage < 0.5 
+          ? 2 * percentage * percentage 
+          : -1 + (4 - 2 * percentage) * percentage;
+        
+        window.scrollTo(0, startPosition + distance * ease);
+        
+        if (progress < duration) {
+          requestAnimationFrame(step);
+        }
+      }
+      
+      requestAnimationFrame(step);
+    }
   };
+
 
   // Extract capacity number from specifications
   const capacityNumber = yacht.specifications.capacity.replace(/[^0-9]/g, '');
@@ -84,7 +112,7 @@ const YachtHeroSection: React.FC<YachtHeroSectionProps> = ({ yacht }) => {
             className={styles.checkAvailabilityBtn}
             onClick={handleCheckAvailability}
           >
-            Check Availability
+            Learn More
           </button>
         </div>
       </div>

@@ -6,7 +6,7 @@
   flex-wrap: wrap;
   justify-content: center;
   gap: 2rem;
-  padding: 2rem;
+  padding: 0.5rem;
   max-width: 1400px;
   margin: 0 auto;
 }
@@ -15,6 +15,7 @@
   flex: 1 1 500px;
   max-width: 600px;
   min-width: 500px;
+  max-height: 90vh;
   
 }
 
@@ -126,6 +127,7 @@
   padding: 1.5rem;
   display: flex;
   flex-direction: column;
+  text-align: center;
   height: calc(100% - 350px); /* Adjust based on your image height */
 }
 
@@ -245,7 +247,6 @@
 .modalImageScroll {
   display: flex;
   overflow-x: auto;
-  scroll-behavior: smooth;
   gap: 1rem;
   padding: 1rem 0;
   scrollbar-width: thin;

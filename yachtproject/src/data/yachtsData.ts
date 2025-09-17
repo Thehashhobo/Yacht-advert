@@ -1,7 +1,9 @@
 export interface YachtData {
-  id: string;                    // Unique identifier for routing
-  title: string;                 // Display name
-  description: string;           // Main description
+  id: string;                   // Unique identifier for routing
+  scheduleId: string;           // for SuperSaaS   
+  scheduleName: string;         // for SuperSaaS   
+  title: string;                // Display name
+  description: string;          // Main description
   location: string;             // Marina/location
   images: string[];             // Array of image imports
   features: string[];           // Key features for tags
@@ -18,7 +20,7 @@ export interface YachtData {
     speed: string;
   };
   amenities: string[];          // Detailed amenities list
-  availability: string[];       // Availability information
+  addOn: string[];       // add-on information
   // Optional fields you might want to add:
   category?: string;            // e.g., "luxury", "party", "family"
   minBookingHours?: number;     // Minimum booking duration
@@ -45,6 +47,8 @@ import y5 from '../assets/b/4.webp';
 export const yachtsData: YachtData[] = [
   {
     id: 'party-boat',
+    scheduleId: '792957',
+    scheduleName: "Meridian_441",
     title: 'Yalla Habibi',
     description: 'Experience ultimate luxury on the water with our flagship vessel. This premium yacht offers unmatched comfort and elegance for discerning guests who demand the finest in maritime luxury.',
     location: 'Vancouver Marina',
@@ -76,7 +80,7 @@ export const yachtsData: YachtData[] = [
       'Outdoor shower',
       'Swimming platform'
     ],
-    availability: [
+    addOn: [
       'Available year-round',
       'Advance booking required',
       'Minimum 4-hour charter'
@@ -92,6 +96,8 @@ export const yachtsData: YachtData[] = [
   },
 {
   id: 'luxury-cruiser',
+  scheduleId: '792342',
+  scheduleName: "Yalla_Habibi",
   title: 'Meridian 441 Sedan Bridge',
   description: 'Spacious, luxurious, and perfect for private celebrations or relaxing coastal cruises. This premium flybridge yacht combines high-end amenities, panoramic views, and smooth handling for an unforgettable experience on the water.',
   location: 'English Bay',
@@ -134,9 +140,9 @@ export const yachtsData: YachtData[] = [
     'Safety equipment for all guests',
     'Optional catering and decorations available'
   ],
-  availability: [
-    'Weekend bookings preferred',
-    'Holiday packages available',
+  addOn: [
+    'Catering: 50$ per guest',
+    'Crabbing Package: $400',
     'Evening charters available'
   ],
   category: 'luxury-cruise',

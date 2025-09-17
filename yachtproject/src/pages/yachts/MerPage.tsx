@@ -45,9 +45,10 @@ const Meridian: React.FC = () => {
         <div className={styles.sidebar}>
           <YachtBooking 
             pricePerHour={yacht.pricePerHour}
-            pricePerDay={yacht.pricePerDay}
-            availability={yacht.availability}
-            yachtId={yacht.id}
+            // pricePerDay={yacht.pricePerDay}
+            availability={yacht.addOn}
+            scheduleId={yacht.scheduleId}
+            scheduleIdName={yacht.scheduleName}
             yachtTitle={yacht.title}
           />
         </div>     

@@ -1,22 +1,77 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import styles from './Rental.module.css';
 import '../styles/typography.css';
 import RentalCard from '../components/RentalCards';
 // import CaptainsSection from '../components/CaptainsSection';
-// import ReviewsSection from '../components/ReviewsSection';
+import ReviewsSection from '../components/ReviewsSection';
 import CTASection from '../components/CTASection';
 import r1 from '../assets/rental/R1.webp';
 import r2 from '../assets/rental/R2.webp';
 import m2 from '../assets/contact.webp';
+// Add gallery images
+import gallery1 from '../assets/rental/R1.webp';
+import gallery2 from '../assets/rental/R2.webp';
+import gallery3 from '../assets/contact.webp';
 
 const RentalPage: React.FC = () => {
   const packagesRef = useRef<HTMLElement>(null);
+  const [selectedImageIndex, setSelectedImageIndex] = useState<number | null>(null);
+  const currentImageIndex = 0;
+
+  const handleCharter = () => {
+    const bookingSection = document.getElementById('rentalCardRoot');
+    if (bookingSection) {
+      const elementPosition = bookingSection.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - 110;
+      
+      const startPosition = window.pageYOffset;
+      const distance = offsetPosition - startPosition;
+      const duration = 1000;
+      let start: number | null = null;
+
+      function step(timestamp: number) {
+        if (!start) start = timestamp;
+        const progress = timestamp - start;
+        const percentage = Math.min(progress / duration, 1);
+        
+        const ease = percentage < 0.5 
+          ? 2 * percentage * percentage 
+          : -1 + (4 - 2 * percentage) * percentage;
+        
+        window.scrollTo(0, startPosition + distance * ease);
+        
+        if (progress < duration) {
+          requestAnimationFrame(step);
+        }
+      }
+      
+      requestAnimationFrame(step);
+    }
+  };
 
   const MoveToListings = () => {
     packagesRef.current?.scrollIntoView({ 
       behavior: 'smooth',
       block: 'start'
     });
+  };
+
+  const openImageModal = (index: number) => {
+    setSelectedImageIndex(index);
+  };
+
+  const closeImageModal = () => {
+    setSelectedImageIndex(null);
+  };
+
+  const navigateImage = (direction: 'prev' | 'next') => {
+    if (selectedImageIndex === null) return;
+    
+    if (direction === 'prev') {
+      setSelectedImageIndex(selectedImageIndex > 0 ? selectedImageIndex - 1 : galleryImages.length - 1);
+    } else {
+      setSelectedImageIndex(selectedImageIndex < galleryImages.length - 1 ? selectedImageIndex + 1 : 0);
+    }
   };
 
   const rentalFeatures = [
@@ -26,6 +81,13 @@ const RentalPage: React.FC = () => {
     { icon: '🎉', title: 'Event Ready', desc: 'Perfect for celebrations and gatherings' },
     { icon: '🛡️', title: 'Fully Insured', desc: 'Complete coverage and safety certified' },
     { icon: '🏆', title: '5-Star Service', desc: 'Exceptional customer satisfaction' }
+  ];
+
+  // Gallery images array
+  const galleryImages = [
+    { src: gallery1, alt: 'Sunset charter experience' },
+    { src: gallery2, alt: 'Guests enjoying yacht deck' },
+    { src: gallery3, alt: 'Vancouver skyline from water' },
   ];
 
   return (
@@ -47,10 +109,13 @@ const RentalPage: React.FC = () => {
                 <span className={styles.statLabel}>Average Rating</span>
               </div>
               <div className={styles.statItem}>
-                <span className={styles.statNumber}>12</span>
+                <span className={styles.statNumber}>3</span>
                 <span className={styles.statLabel}>Luxury Vessels</span>
               </div>
             </div>
+              <button className={styles.PurchaseButton} onClick={handleCharter}>
+              Charter Boats
+            </button>
           </div>
         </div>
       </section>
@@ -88,6 +153,82 @@ const RentalPage: React.FC = () => {
         </div>
       </section>
 
+      {/* Packages Section */}
+      <section ref={packagesRef} className={styles.packagesSection}>
+        <div className={styles.container}>
+          <div className={styles.sectionHeader}>
+            <h2>Charter Packages</h2>
+            <p>Choose the perfect package for your adventure</p>
+          </div>
+            <RentalCard />
+        </div>
+      </section>
+
+      {/* Charter Gallery Carousel Section */}
+      <section className={styles.gallerySection}>
+        <div className={styles.container}>
+          <div className={styles.galleryContent}>
+            <div className={styles.galleryText}>
+              <h2>Unforgettable Charter Moments</h2>
+              <p>Take a glimpse into the extraordinary experiences our guests enjoy aboard our luxury yachts. From breathtaking sunsets to memorable celebrations, every charter creates lasting memories against Vancouver's stunning coastal backdrop.</p>
+            </div>
+            
+            {/* Single Image Carousel Container */}
+            <div className={styles.singleImageCarousel}>
+              <div 
+                className={styles.mainCarouselImage}
+                onClick={() => openImageModal(0)}
+              >
+                <img 
+                  src={galleryImages[currentImageIndex].src} 
+                  alt={galleryImages[currentImageIndex].alt} 
+                />
+                <div className={styles.imageOverlay}>
+                  <span className={styles.expandIcon}>🔍</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Image Modal Overlay */}
+      {selectedImageIndex !== null && (
+        <div className={styles.imageModal} onClick={closeImageModal}>
+          <div className={styles.modalContent} onClick={(e) => e.stopPropagation()}>
+            <button className={styles.modalClose} onClick={closeImageModal}>×</button>
+            
+            <button 
+              className={`${styles.modalNav} ${styles.modalNavLeft}`}
+              onClick={() => navigateImage('prev')}
+            >
+              ←
+            </button>
+            
+            <div className={styles.modalImageContainer}>
+              <img 
+                src={galleryImages[selectedImageIndex].src} 
+                alt={galleryImages[selectedImageIndex].alt}
+                className={styles.modalImage}
+              />
+            </div>
+            
+            <button 
+              className={`${styles.modalNav} ${styles.modalNavRight}`}
+              onClick={() => navigateImage('next')}
+            >
+              →
+            </button>
+            
+            <div className={styles.modalInfo}>
+              <span className={styles.modalCounter}>
+                {selectedImageIndex + 1} / {galleryImages.length}
+              </span>
+            </div>
+          </div>
+        </div>
+      )}
+
       {/* Features Section */}
       <section className={styles.featuresSection}>
         <div className={styles.container}>
@@ -107,24 +248,8 @@ const RentalPage: React.FC = () => {
         </div>
       </section>
 
-      {/* Packages Section */}
-      <section ref={packagesRef} className={styles.packagesSection}>
-        <div className={styles.container}>
-          <div className={styles.sectionHeader}>
-            <h2>Charter Packages</h2>
-            <p>Choose the perfect package for your adventure</p>
-          </div>
-          <div className={styles.packagesContent}>
-            <RentalCard />
-          </div>
-        </div>
-      </section>
-
-      {/* Captains Section */}
-      {/* <CaptainsSection /> */}
-
       {/* Reviews Section */}
-      {/* <ReviewsSection /> */}
+      <ReviewsSection />
 
       {/* CTA Section */}
       <CTASection

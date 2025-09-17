@@ -10,7 +10,42 @@ import RentalCards from '../components/RentalCards';
 import background2 from '../assets/home/b3.webp';
 
 
+
 const HomePage: React.FC = () => {
+  const handleCharter = () => {
+    const bookingSection = document.getElementById('rentalCardRoot');
+    if (bookingSection) {
+      const elementPosition = bookingSection.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - 80; // Add some offset
+      
+      console.log('Scrolling to:', offsetPosition);
+      
+      // Try with requestAnimationFrame for better smoothness
+      const startPosition = window.pageYOffset;
+      const distance = offsetPosition - startPosition;
+      const duration = 1000; // 1 second
+      let start: number | null = null;
+
+      function step(timestamp: number) {
+        if (!start) start = timestamp;
+        const progress = timestamp - start;
+        const percentage = Math.min(progress / duration, 1);
+        
+        // Easing function for smooth animation
+        const ease = percentage < 0.5 
+          ? 2 * percentage * percentage 
+          : -1 + (4 - 2 * percentage) * percentage;
+        
+        window.scrollTo(0, startPosition + distance * ease);
+        
+        if (progress < duration) {
+          requestAnimationFrame(step);
+        }
+      }
+      
+      requestAnimationFrame(step);
+    }
+  };
   return (
     <>
       {/* Hero Section */}
@@ -25,10 +60,10 @@ const HomePage: React.FC = () => {
           <h3>YACHT RENTAL, SERVICES AND MANAGEMENT CENTRE</h3>
           <p>In The Greater Vancouver Area</p>
           <div className={styles.PurchaseButtonContainer}>
-            <button className={styles.PurchaseButton}>
+            {/* <button className={styles.PurchaseButton}>
               Buy Tickets
-            </button>
-            <button className={styles.PurchaseButton}>
+            </button> */}
+            <button className={styles.PurchaseButton} onClick={handleCharter}>
               Charter Boats
             </button>
           </div>

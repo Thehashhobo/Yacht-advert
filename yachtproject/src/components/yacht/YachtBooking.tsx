@@ -1,30 +1,26 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import styles from './YachtBooking.module.css';
+import SuperSaaSWidget from './SuperSaaSWidget';
 
 interface YachtBookingProps {
   pricePerHour: string;
-  pricePerDay: string;
+  // pricePerDay: string;
   availability: string[];
-  yachtId: string;
+  scheduleId: string;
+  scheduleIdName: string;
   yachtTitle: string;
 }
 
 const YachtBooking: React.FC<YachtBookingProps> = ({ 
   pricePerHour, 
-  pricePerDay, 
+  // pricePerDay, 
   availability, 
-  yachtId,
+  scheduleId,
+  scheduleIdName,
   yachtTitle 
 }) => {
   const navigate = useNavigate();
-
-  const handleBookNow = () => {
-    // Navigate to booking form or external booking system
-    console.log(`Booking ${yachtTitle} (${yachtId})`);
-    // You can navigate to a booking page or open a modal
-    // navigate(`/book/${yachtId}`);
-  };
 
   const handleInquire = () => {
     // Navigate to contact form with yacht info pre-filled
@@ -32,21 +28,20 @@ const YachtBooking: React.FC<YachtBookingProps> = ({
   };
 
   return (
-    <div className={styles.bookingCard}>
+    <div className={styles.bookingCard} id='booking-section'>
       <h3>Book This Yacht</h3>
       <div className={styles.priceDisplay}>
         <span className={styles.priceAmount}>{pricePerHour}</span>
         <span className={styles.priceUnit}>per hour</span>
-                <span className={styles.priceAmount}>{pricePerDay}</span>
-        <span className={styles.priceUnit}>per day</span>
+        {/* <span className={styles.priceAmount}>{pricePerDay}</span>
+        <span className={styles.priceUnit}>per day</span> */}
       </div>
       
       <div className={styles.availabilitySection}>
-        <h4>Availability</h4>
+        <h4>Optional Add On</h4>
         <ul className={styles.availabilityList}>
           {availability.map((item, index) => (
             <li key={index} className={styles.availabilityItem}>
-              <span className={styles.availabilityIcon}>📅</span>
               {item}
             </li>
           ))}
@@ -54,12 +49,37 @@ const YachtBooking: React.FC<YachtBookingProps> = ({
       </div>
 
       <div className={styles.buttonGroup}>
-        <button 
-          className={styles.bookNowButton}
-          onClick={handleBookNow}
-        >
-          Book Now
-        </button>
+        <SuperSaaSWidget
+              accountId="596774"
+              scheduleId={scheduleId} //792957
+              scheduleName={scheduleIdName}
+              options={{
+                finish_time: "hide",
+                custom_css: `
+                .cb5 {
+                margin: 0.2em 0.2em 0em;
+                padding-bottom: 0;
+                }
+
+                #monthnav .month table tbody tr:first-child td {
+                  padding-top: 0;
+                }
+
+                #monthnav .month table tbody td a {
+                  padding: 0.6rem 0.4rem;
+                }
+
+                #monthnav {
+                  margin: 0.5em 0;
+                }
+
+                .sch tr.nr td.hd {
+                padding: 1em 1em 1em !important;
+                }
+                `
+              }}
+              buttonText="Book now"
+            />
         <button 
           className={styles.inquireButton}
           onClick={handleInquire}

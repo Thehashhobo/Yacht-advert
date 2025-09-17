@@ -31,7 +31,8 @@ const RentalCards: React.FC = () => {
   };
 
   return (
-    <div className={styles.flexContainer}>
+    <div className={styles.flexContainer} 
+    id='rentalCardRoot'>
       {yachtsData.map((yacht) => {
         const currentImageIndex = carouselIndexes[yacht.id] || 0;
         

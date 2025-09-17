@@ -1,0 +1,30 @@
+.supersaasContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.bookNowButton {
+  width: 100%;
+  padding: 1rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+
+}
+
+.bookNowButton {
+  background: var(--secondary-color);
+  color: white;
+  border: none;
+  box-shadow: 0 4px 12px rgba(80, 164, 203, 0.3);
+}
+
+.bookNowButton:hover {
+  background: var(--secondary-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(80, 164, 203, 0.4);
+}

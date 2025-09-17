@@ -8,6 +8,8 @@ import YachtBooking from '../../components/yacht/YachtBooking';
 import YachtHeroSection from '../../components/yacht/YachtHeroSection';
 import styles from './YachtPage.module.css';
 
+
+
 const YallaHabibi: React.FC = () => {
   // const navigate = useNavigate();
   const yacht = yachtsData.find(y => y.id === 'party-boat')!;
@@ -51,9 +53,10 @@ const YallaHabibi: React.FC = () => {
         <div className={styles.sidebar}>
           <YachtBooking 
             pricePerHour={yacht.pricePerHour}
-            pricePerDay={yacht.pricePerDay}
-            availability={yacht.availability}
-            yachtId={yacht.id}
+            // pricePerDay={yacht.pricePerDay}
+            availability={yacht.addOn}
+            scheduleId={yacht.scheduleId}
+            scheduleIdName={yacht.scheduleName}
             yachtTitle={yacht.title}
           />
           <YachtSpecs specifications={yacht.specifications} />
