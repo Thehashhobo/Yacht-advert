@@ -6,9 +6,19 @@ import YachtHeroSection from '../../components/yacht/YachtHeroSection';
 import YachtInfo from '../../components/yacht/YachtInfo';
 import YachtSpecs from '../../components/yacht/YachtSpecs';
 import YachtBooking from '../../components/yacht/YachtBooking';
+import MapComponent from '../../components/yacht/MapComponent';
 import styles from './YachtPage.module.css';
 
 const Meridian: React.FC = () => {
+  // Location data for the vessel
+  const vesselLocation = {
+    lat: 49.27486256868661,
+    lng: -123.1084861286052,
+    name: 'Meridian Luxury Cruiser',
+    address: 'X Port Marina, Vancouver, BC',
+    description: 'Marina at the heart of Vancouver.'
+  };
+
   // const navigate = useNavigate();
   const yacht = yachtsData.find(y => y.id === 'luxury-cruiser')!;
 
@@ -22,6 +32,17 @@ const Meridian: React.FC = () => {
       {/* Content grid with reusable components */}
       <div className={styles.contentGrid}>
         <div className={styles.mainContent}>
+          
+        {/* Vessel Location Map */}
+          <div className={styles.customSection}>
+            <h3>Vessel Location</h3>
+            <MapComponent 
+              location={vesselLocation}
+              zoom={15}
+              height="350px"
+            />
+          </div>
+
           <YachtInfo 
             title={yacht.title}
             description={yacht.description}

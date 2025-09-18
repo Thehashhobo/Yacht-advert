@@ -6,13 +6,20 @@ import YachtInfo from '../../components/yacht/YachtInfo';
 import YachtSpecs from '../../components/yacht/YachtSpecs';
 import YachtBooking from '../../components/yacht/YachtBooking';
 import YachtHeroSection from '../../components/yacht/YachtHeroSection';
+import MapComponent from '../../components/yacht/MapComponent';
 import styles from './YachtPage.module.css';
-
-
 
 const YallaHabibi: React.FC = () => {
   // const navigate = useNavigate();
   const yacht = yachtsData.find(y => y.id === 'party-boat')!;
+
+  const vesselLocation = {
+    lat: 49.27486256868661,
+    lng: -123.1084861286052,
+    name: 'YH',
+    address: 'X Port Marina, Vancouver, BC',
+    description: 'Marina at the heart of Vancouver.'
+  };
 
   return (
     <div className={styles.yachtPage}>
@@ -23,6 +30,17 @@ const YallaHabibi: React.FC = () => {
 
       <div className={styles.contentGrid}>
         <div className={styles.mainContent}>
+
+          {/* Vessel Location Map */}
+          <div className={styles.customSection}>
+            <h3>Vessel Location</h3>
+            <MapComponent 
+              location={vesselLocation}
+              zoom={15}
+              height="350px"
+            />
+          </div>
+
           <YachtInfo 
             title={yacht.title}
             description={yacht.description}
@@ -62,7 +80,7 @@ const YallaHabibi: React.FC = () => {
           <YachtSpecs specifications={yacht.specifications} />
         </div>
       </div>
-      {/* Custom party-specific features */}
+      {/* Custom YH-specific features */}
       <div className={styles.partyFeatures}>
         <h2>Party Experience</h2>
         <div className={styles.partyGrid}>

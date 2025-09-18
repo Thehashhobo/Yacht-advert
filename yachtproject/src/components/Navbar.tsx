@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useLocation, Link } from 'react-router-dom';
 import { useMediaQuery } from 'react-responsive';
-import logo from '../assets/logo3.png';
+import logo from '../assets/logo.webp';
 import styles from './Navbar.module.css';
 
 const Navbar: React.FC = () => {
