@@ -46,24 +46,25 @@ import y5 from '../assets/b/4.webp';
 
 export const yachtsData: YachtData[] = [
   {
+    // Sunny Greet
     id: 'party-boat',
     scheduleId: '792957',
-    scheduleName: "Meridian_441",
-    title: 'Yalla Habibi',
+    scheduleName: "Yalla_Habibi",
+    title: 'Sunny Greet',
     description: 'Experience ultimate luxury on the water with our flagship vessel. This premium yacht offers unmatched comfort and elegance for discerning guests who demand the finest in maritime luxury.',
-    location: 'Vancouver Marina',
+    location: 'Xport Marina',
     images: [y1, y2, y3, y4, y5],
     features: ['Full Kitchen', 'Premium Sound System', 'Sun Deck', 'Dining Area'],
     cardFeatures: ['Captain included', 'Captain included','Captain included'],
     pricePerDay: '$2,500/day',
-    pricePerHour: '$350/Hr',
-    link: 'YallaHabibi',
+    pricePerHour: '$400/Hr',
+    link: 'SunnyGreet',
     specifications: {
-      length: '65ft',
+      length: '42ft',
       capacity: '12 guests',
-      bedrooms: '3',
-      bathrooms: '2',
-      crew: '2',
+      bedrooms: '2',
+      bathrooms: '1',
+      crew: '1-2',
       speed: '25 knots'
     },
     amenities: [
@@ -95,12 +96,13 @@ export const yachtsData: YachtData[] = [
     tags: ['luxury', 'corporate', 'romantic', 'anniversary']
   },
 {
+  // Meridian_441
   id: 'luxury-cruiser',
   scheduleId: '792342',
-  scheduleName: "Yalla_Habibi",
+  scheduleName: "Meridian_441",
   title: 'Meridian 441 Sedan Bridge',
   description: 'Spacious, luxurious, and perfect for private celebrations or relaxing coastal cruises. This premium flybridge yacht combines high-end amenities, panoramic views, and smooth handling for an unforgettable experience on the water.',
-  location: 'English Bay',
+  location: 'Xport ',
   images: [m1, m2, m3, m4, m5, m6],
   features: [
     'Flybridge with lounge seating',
@@ -108,7 +110,7 @@ export const yachtsData: YachtData[] = [
     'Spacious salon with panoramic windows',
     'Premium surround sound system',
     'Climate-controlled interior and bridge',
-    'Two staterooms with en-suite bathrooms'
+    'Two staterooms each with en-suite bathrooms'
   ],
   cardFeatures: [
     'Captain included',
@@ -119,18 +121,14 @@ export const yachtsData: YachtData[] = [
   pricePerHour: '$500/Hr',
   link: 'Meridian',
   specifications: {
-    length: '47ft overall',
-    capacity: '20 guests (day)',
+    length: '50ft',
+    capacity: '15 guests',
     bedrooms: '2',
     bathrooms: '2',
-    crew: '2',
+    crew: '1-2',
     speed: 'Cruise: 20 knots, Max: ~26 knots'
   },
   amenities: [
-    'Open flybridge with wraparound seating and table',
-    'Bridge wet bar with sink and refrigerator',
-    'Electric grill',
-    'Full-beam salon with entertainment center',
     'Flat-screen TVs and Bose surround sound',
     'Climate-controlled cabins and bridge',
     'Fully equipped galley with stove, microwave, fridge/freezer',

@@ -6,12 +6,24 @@ import RentalCard from '../components/RentalCards';
 import ReviewsSection from '../components/ReviewsSection';
 import CTASection from '../components/CTASection';
 import r1 from '../assets/rental/R1.webp';
-import r2 from '../assets/rental/R2.webp';
+import r2 from '../assets/rental/G7.webp';
 import m2 from '../assets/contact.webp';
 // Add gallery images
-import gallery1 from '../assets/rental/R1.webp';
-import gallery2 from '../assets/rental/R2.webp';
-import gallery3 from '../assets/contact.webp';
+import g1 from '../assets/rental/G1.webp';
+import g2 from '../assets/rental/G2.webp';
+import g3 from '../assets/rental/G3.webp';
+import g4 from '../assets/rental/G4.webp';
+import g5 from '../assets/rental/G5.webp';
+import g6 from '../assets/rental/G6.webp';
+import g7 from '../assets/rental/G7.webp';
+import g8 from '../assets/rental/G8.webp';
+import g9 from '../assets/rental/G9.webp';
+import g10 from '../assets/rental/G10.webp';
+import g11 from '../assets/rental/G11.webp';
+import g12 from '../assets/rental/G12.webp';
+import g13 from '../assets/rental/G13.webp';
+import g14 from '../assets/rental/G14.webp';
+
 
 const RentalPage: React.FC = () => {
   const packagesRef = useRef<HTMLElement>(null);
@@ -85,9 +97,20 @@ const RentalPage: React.FC = () => {
 
   // Gallery images array
   const galleryImages = [
-    { src: gallery1, alt: 'Sunset charter experience' },
-    { src: gallery2, alt: 'Guests enjoying yacht deck' },
-    { src: gallery3, alt: 'Vancouver skyline from water' },
+    { src: g1, alt: 'Sunset charter experience' },
+    { src: g2, alt: 'Guests enjoying yacht deck' },
+    { src: g3, alt: 'Vancouver skyline from water' },
+    { src: g4, alt: 'Sunset charter experience' },
+    { src: g5, alt: 'Guests enjoying yacht deck' },
+    { src: g6, alt: 'Vancouver skyline from water' },
+    { src: g7, alt: 'Sunset charter experience' },
+    { src: g8, alt: 'Guests enjoying yacht deck' },
+    { src: g9, alt: 'Vancouver skyline from water' },
+    { src: g10, alt: 'Sunset charter experience' },
+    { src: g11, alt: 'Guests enjoying yacht deck' },
+    { src: g12, alt: 'Vancouver skyline from water' },
+    { src: g13, alt: 'Sunset charter experience' },
+    { src: g14, alt: 'Guests enjoying yacht deck' },
   ];
 
   return (

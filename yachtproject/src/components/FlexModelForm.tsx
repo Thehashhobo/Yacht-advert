@@ -111,7 +111,7 @@ const FlexModalForm: React.FC<FlexModalFormProps> = ({ isVisible, onClose, onSub
       maskClosable={false}
       keyboard={false}
       centered
-      destroyOnClose
+      destroyOnHidden
       style={{ top: 20 }}
     >
       <Form

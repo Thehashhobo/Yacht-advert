@@ -9,7 +9,7 @@ import YachtHeroSection from '../../components/yacht/YachtHeroSection';
 import MapComponent from '../../components/yacht/MapComponent';
 import styles from './YachtPage.module.css';
 
-const YallaHabibi: React.FC = () => {
+const SunnyGreet: React.FC = () => {
   // const navigate = useNavigate();
   const yacht = yachtsData.find(y => y.id === 'party-boat')!;
 
@@ -111,4 +111,4 @@ const YallaHabibi: React.FC = () => {
   );
 };
 
-export default YallaHabibi;
+export default SunnyGreet;

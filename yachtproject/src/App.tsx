@@ -6,7 +6,7 @@ import ManagementPage from './pages/ManagementPage';
 import ServicesPage from './pages/ServicesPage';
 import RentalsPage from './pages/RentalsPage';
 import Meridian from './pages/yachts/MerPage';
-import YallaHabibi from './pages/yachts/YHPage';
+import SunnyGreet from './pages/yachts/YHPage';
 
 import ScrollToTop from './components/ScrollToTop';
 // import RentalsPage from './pages/RentalsPage';
@@ -33,7 +33,7 @@ const App: React.FC = () => {
           
           {/* Individual yacht pages */}
           <Route path="/yacht/Meridian" element={<Meridian />} />
-          <Route path="/yacht/YallaHabibi" element={<YallaHabibi />} />
+          <Route path="/yacht/SunnyGreet" element={<SunnyGreet />} />
         </Routes>
         <div className="footer-section">
         <div className="footer-links">

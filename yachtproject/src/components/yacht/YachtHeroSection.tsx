@@ -57,7 +57,7 @@ const YachtHeroSection: React.FC<YachtHeroSectionProps> = ({ yacht }) => {
             </div>
             <div className={styles.infoContent}>
               <span className={styles.infoLabel}>Yacht</span>
-              <span className={styles.infoValue}>46ft</span>
+              <span className={styles.infoValue}>42ft</span>
             </div>
           </div>
 

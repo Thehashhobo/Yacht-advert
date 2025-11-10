@@ -37,10 +37,6 @@ const YachtSpecs: React.FC<YachtSpecsProps> = ({ specifications }) => {
           <span className={styles.specLabel}>Crew:</span>
           <span className={styles.specValue}>{specifications.crew}</span>
         </div>
-        <div className={styles.specItem}>
-          <span className={styles.specLabel}>Max Speed:</span>
-          <span className={styles.specValue}>{specifications.speed}</span>
-        </div>
       </div>
     </div>
   );
